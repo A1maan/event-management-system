@@ -12,9 +12,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.Admin">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.SceneController">
    <children>
-      <Button layoutX="76.0" layoutY="50.0" mnemonicParsing="false" text="Add Event" />
+      <Button layoutX="76.0" layoutY="50.0" mnemonicParsing="false" onAction="#AddEvent" text="Add Event" />
       <Button layoutX="152.0" layoutY="50.0" mnemonicParsing="false" text="Delete Event" />
       <Button layoutX="241.0" layoutY="50.0" mnemonicParsing="false" text="Edit Event" />
       <Rectangle arcHeight="5.0" fill="#849aae" height="400.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="72.0" />
