@@ -13,7 +13,7 @@ public class Main extends Application {
         try{
             Parent root = FXMLLoader.load(getClass().getResource("Admin.fxml"));
             Scene scene = new Scene(root);
-            stage.setTitle("Hello!");
+            stage.setTitle("Event Management System");
             stage.setScene(scene);
             stage.show();
         }
