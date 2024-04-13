@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="443e0dac-aad7-417f-a7cd-9a816ca4240e" name="Changes" comment="extra commit for images and additional files">
+    <list default="true" id="443e0dac-aad7-417f-a7cd-9a816ca4240e" name="Changes" comment="testing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/Admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/Admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-images/Hamburger_icon.svg.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/project-images/Hamburger_icon.svg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/Admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/Admin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/SceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/User.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/User.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/User.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +45,6 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
@@ -55,12 +56,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/almaan/Library/CloudStorage/OneDrive-KFUPM/Class Notes/Term-232/ICS108/ICS108-Project/src/main/resources/org/example/ics108project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
@@ -68,8 +70,13 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/org/example/ics108project" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/org/example/ics108project" />
       <recent name="$PROJECT_DIR$/src/main/java/org/example/ics108project" />
+      <recent name="$PROJECT_DIR$/src/main/resources/org/example/ics108project/example" />
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
@@ -93,7 +100,7 @@
       <workItem from="1712320078912" duration="913000" />
       <workItem from="1712579125146" duration="168000" />
       <workItem from="1712579350358" duration="1707000" />
-      <workItem from="1713012714289" duration="2392000" />
+      <workItem from="1713012714289" duration="4164000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -159,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712583086911</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="testing">
+      <option name="closed" value="true" />
+      <created>1713015153066</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1713015153066</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +196,8 @@
     <MESSAGE value="test commit 2" />
     <MESSAGE value="Created the first draft UI for the Admin.fxml scene" />
     <MESSAGE value="extra commit for images and additional files" />
-    <option name="LAST_COMMIT_MESSAGE" value="extra commit for images and additional files" />
+    <MESSAGE value="testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
