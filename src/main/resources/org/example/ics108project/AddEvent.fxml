@@ -7,34 +7,19 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.AdminController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.AddEventController">
    <children>
-      <Rectangle arcHeight="5.0" fill="#849aae" height="400.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="72.0" />
       <Text fontSmoothingType="LCD" layoutX="281.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Event" textAlignment="CENTER">
          <font>
             <Font name="Euphemia UCAS Bold" size="24.0" />
          </font>
       </Text>
-      <MenuButton layoutX="9.0" layoutY="11.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="42.0">
-         <items>
-            <MenuItem mnemonicParsing="false" text="Admin Page" />
-            <MenuItem mnemonicParsing="false" onAction="#switchToUserScene" text="User Page" />
-         </items>
-         <graphic>
-            <ImageView fitHeight="19.0" fitWidth="207.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@project-images/Hamburger_icon.svg.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </MenuButton>
       <TextField layoutX="204.0" layoutY="70.0" prefHeight="26.0" prefWidth="313.0" />
       <TextArea layoutX="204.0" layoutY="101.0" prefHeight="47.0" prefWidth="313.0" />
       <MenuButton layoutX="204.0" layoutY="153.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="153.0" text="Category">
@@ -47,7 +32,7 @@
          </font>
       </MenuButton>
       <DatePicker layoutX="204.0" layoutY="186.0" prefHeight="26.0" prefWidth="153.0" />
-      <Button layoutX="273.0" layoutY="328.0" mnemonicParsing="false" text="Create Event" textAlignment="CENTER">
+      <Button layoutX="273.0" layoutY="328.0" mnemonicParsing="false" onAction="#switchToAdminScene" text="Create Event" textAlignment="CENTER">
          <font>
             <Font name="Euphemia UCAS Bold" size="18.0" />
          </font>
@@ -64,5 +49,22 @@
             <Font name="Euphemia UCAS" size="13.0" />
          </font>
       </Label>
+      <Rectangle arcHeight="5.0" fill="#849aae" height="400.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="72.0" />
+      <Button layoutX="10.0" layoutY="61.0" mnemonicParsing="false" onAction="#switchToUserScene" prefHeight="25.0" prefWidth="53.0" text="User">
+         <font>
+            <Font name="Euphemia UCAS Bold" size="12.0" />
+         </font>
+      </Button>
+      <Text layoutX="12.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scenes">
+         <font>
+            <Font name="Euphemia UCAS Bold" size="14.0" />
+         </font>
+      </Text>
+      <Line endX="38.0" layoutX="34.0" layoutY="24.0" startX="-100.0" stroke="#cad4dd" />
+      <Button layoutX="5.0" layoutY="30.0" mnemonicParsing="false" onAction="#switchToAdminScene" prefHeight="25.0" prefWidth="63.0" text="Admin">
+         <font>
+            <Font name="Euphemia UCAS Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

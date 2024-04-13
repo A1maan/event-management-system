@@ -13,6 +13,7 @@ public class AddEventController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+
     public void switchToUserScene(ActionEvent event) throws IOException {
         try {
             root = FXMLLoader.load(getClass().getResource("User.fxml"));
@@ -27,7 +28,7 @@ public class AddEventController {
         }
     }
 
-    public void switchToAdminScene(ActionEvent event){
+    public void switchToAdminScene(ActionEvent event) throws IOException{
         try {
             root = FXMLLoader.load(getClass().getResource("Admin.fxml"));
             stage = (Stage)((Node) event.getSource()).getScene().getWindow();

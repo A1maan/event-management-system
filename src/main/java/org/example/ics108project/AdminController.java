@@ -28,7 +28,7 @@ public class AdminController {
         }
     }
 
-    public void switchToAddEventScene(ActionEvent event){
+    public void switchToAddEventScene(ActionEvent event) throws IOException{
         try {
             root = FXMLLoader.load(getClass().getResource("AddEvent.fxml"));
             stage = (Stage)((Node) event.getSource()).getScene().getWindow();
@@ -40,8 +40,5 @@ public class AdminController {
         catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-    public void AddEvent(ActionEvent event){
-        switchToAddEventScene(event);
     }
 }
