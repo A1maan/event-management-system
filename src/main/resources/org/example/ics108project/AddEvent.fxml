@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -20,31 +19,22 @@
             <Font name="Euphemia UCAS Bold" size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="204.0" layoutY="70.0" prefHeight="26.0" prefWidth="313.0" />
-      <TextArea layoutX="204.0" layoutY="101.0" prefHeight="47.0" prefWidth="313.0" />
-      <MenuButton layoutX="204.0" layoutY="153.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="153.0" text="Category">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
-        </items>
-         <font>
-            <Font name="Euphemia UCAS Bold" size="13.0" />
-         </font>
-      </MenuButton>
-      <DatePicker layoutX="204.0" layoutY="186.0" prefHeight="26.0" prefWidth="153.0" />
+      <TextField fx:id="titleField" layoutX="204.0" layoutY="70.0" prefHeight="26.0" prefWidth="313.0" />
+      <TextArea fx:id="descriptionField" layoutX="204.0" layoutY="101.0" prefHeight="47.0" prefWidth="313.0" />
+      <DatePicker fx:id="dateField" layoutX="204.0" layoutY="186.0" prefHeight="26.0" prefWidth="153.0" />
       <Button layoutX="273.0" layoutY="328.0" mnemonicParsing="false" onAction="#switchToAdminScene" text="Create Event" textAlignment="CENTER">
          <font>
             <Font name="Euphemia UCAS Bold" size="18.0" />
          </font>
       </Button>
-      <TextField layoutX="204.0" layoutY="219.0" prefHeight="26.0" prefWidth="313.0" />
-      <TextArea layoutX="204.0" layoutY="250.0" prefHeight="47.0" prefWidth="313.0" />
+      <TextField fx:id="capacityField" layoutX="204.0" layoutY="245.0" prefHeight="26.0" prefWidth="313.0" />
+      <TextArea fx:id="locationField" layoutX="204.0" layoutY="275.0" prefHeight="47.0" prefWidth="313.0" />
       <Label layoutX="136.0" layoutY="73.0" text=" Event Title:" textAlignment="CENTER" />
       <Label layoutX="133.0" layoutY="103.0" text="Description:" textAlignment="CENTER" />
       <Label layoutX="145.0" layoutY="156.0" text="Category:" textAlignment="CENTER" />
       <Label layoutX="170.0" layoutY="190.0" text="Date:" textAlignment="CENTER" />
-      <Label layoutX="147.0" layoutY="222.0" text="Capacity:" textAlignment="CENTER" />
-      <Label layoutX="144.0" layoutY="251.0" text="Location:" textAlignment="CENTER">
+      <Label layoutX="147.0" layoutY="246.0" text="Capacity:" textAlignment="CENTER" />
+      <Label layoutX="144.0" layoutY="275.0" text="Location:" textAlignment="CENTER">
          <font>
             <Font name="Euphemia UCAS" size="13.0" />
          </font>
@@ -66,5 +56,8 @@
             <Font name="Euphemia UCAS Bold" size="12.0" />
          </font>
       </Button>
+      <ChoiceBox fx:id="categoryField" layoutX="204.0" layoutY="154.0" prefWidth="150.0" />
+      <TextField fx:id="timeField" layoutX="204.0" layoutY="216.0" prefHeight="26.0" prefWidth="153.0" />
+      <Label layoutX="169.0" layoutY="220.0" text="Time:" textAlignment="CENTER" />
    </children>
 </AnchorPane>

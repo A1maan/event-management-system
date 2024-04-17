@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="443e0dac-aad7-417f-a7cd-9a816ca4240e" name="Changes" comment="changed the stage name to event management system">
+    <list default="true" id="443e0dac-aad7-417f-a7cd-9a816ca4240e" name="Changes" comment="misc changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AddEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AddEventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/AddEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/AddEvent.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/Admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/Admin.fxml" afterDir="false" />
     </list>
@@ -45,28 +46,28 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Admin.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/almaan/Library/CloudStorage/OneDrive-KFUPM/Class Notes/Term-232/ICS108/ICS108-Project/src/main/resources/org/example/ics108project",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Admin.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/almaan/Library/CloudStorage/OneDrive-KFUPM/Class Notes/Term-232/ICS108/ICS108-Project/src/main/resources/org/example/ics108project&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/org/example/ics108project" />
@@ -100,6 +101,8 @@
       <workItem from="1712579125146" duration="168000" />
       <workItem from="1712579350358" duration="1707000" />
       <workItem from="1713012714289" duration="14162000" />
+      <workItem from="1713031853554" duration="43000" />
+      <workItem from="1713345513273" duration="10681000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -205,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713020237683</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="misc changes">
+      <option name="closed" value="true" />
+      <created>1713031881432</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1713031881432</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +243,19 @@
     <MESSAGE value="added the add event scene and its controller" />
     <MESSAGE value="change the stage name to event management system" />
     <MESSAGE value="changed the stage name to event management system" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the stage name to event management system" />
+    <MESSAGE value="misc changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="misc changes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/ics108project/Main.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

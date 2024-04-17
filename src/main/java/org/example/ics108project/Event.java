@@ -1,20 +1,24 @@
 package org.example.ics108project;
 
 public class Event {
-    static Integer id;
+    static Integer id = 0;
     private Integer eventId;
     private String title;
     private String description;
     private String category;
     private String date;
+    private String time;
     private Integer capacity;
     private String location;
 
-    public Event(String title, String category, String description, String date, Integer capacity, String location ){
+    public Event(String title, String category, String description, String date, String time, Integer capacity, String location ){
+        id += 1;
+
         this.title = title;
         this.category = category;
         this.description = description;
         this.date = date;
+        this.time = time;
         this.capacity = capacity;
         this.location = location;
         this.eventId = id;
@@ -78,6 +82,17 @@ public class Event {
 
     public String getLocation() {
         return location;
+    }
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public Integer getEventID(){
+        return this.eventId;
     }
 
 }

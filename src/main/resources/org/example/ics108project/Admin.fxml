@@ -12,7 +12,7 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.AdminController">
    <children>
       <Button layoutX="76.0" layoutY="50.0" mnemonicParsing="false" onAction="#switchToAddEventScene" text="Add Event" />
-      <Button layoutX="152.0" layoutY="50.0" mnemonicParsing="false" text="Delete Event" />
+      <Button layoutX="152.0" layoutY="50.0" mnemonicParsing="false" onAction="#deleteEvent" text="Delete Event" />
       <Button layoutX="241.0" layoutY="50.0" mnemonicParsing="false" text="Edit Event" />
       <Rectangle arcHeight="5.0" fill="#849aae" height="400.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="72.0" />
       <Text fontSmoothingType="LCD" layoutX="238.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Page" textAlignment="CENTER">
@@ -20,15 +20,15 @@
             <Font name="Euphemia UCAS Bold" size="24.0" />
          </font>
       </Text>
-      <TableView layoutX="74.0" layoutY="81.0" prefHeight="319.0" prefWidth="527.0">
+      <TableView fx:id="tableView" layoutX="74.0" layoutY="81.0" prefHeight="319.0" prefWidth="527.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Event ID" />
-          <TableColumn prefWidth="75.0" text="Event Name" />
-            <TableColumn prefWidth="75.0" text="Category" />
-            <TableColumn prefWidth="75.0" text="Date" />
-            <TableColumn prefWidth="75.0" text="Time" />
-            <TableColumn prefWidth="75.0" text="Location" />
-            <TableColumn prefWidth="75.0" text="Capacity" />
+          <TableColumn fx:id="eventIDColumn" prefWidth="75.0" text="Event ID" />
+          <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Event Name" />
+            <TableColumn fx:id="categoryColumn" prefWidth="75.0" text="Category" />
+            <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Date" />
+            <TableColumn fx:id="timeColumn" prefWidth="75.0" text="Time" />
+            <TableColumn fx:id="locationColumn" prefWidth="75.0" text="Location" />
+            <TableColumn fx:id="capacityColumn" prefWidth="75.0" text="Capacity" />
         </columns>
       </TableView>
       <Button layoutX="10.0" layoutY="32.0" mnemonicParsing="false" onAction="#switchToUserScene" prefHeight="25.0" prefWidth="53.0" text="User">

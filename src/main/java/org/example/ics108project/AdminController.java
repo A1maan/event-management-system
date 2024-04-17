@@ -1,18 +1,67 @@
 package org.example.ics108project;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class AdminController {
+public class AdminController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    @FXML
+    private TableView tableView;
+    @FXML
+    private TableColumn<Event, Integer> eventIDColumn;
+    @FXML
+    private TableColumn<Event, String> nameColumn;
+    @FXML
+    private TableColumn<Event, String> categoryColumn;
+    @FXML
+    private TableColumn<Event, String> dateColumn;
+    @FXML
+    private TableColumn<Event, String> timeColumn;
+    @FXML
+    private TableColumn<Event, String> locationColumn;
+    @FXML
+    private TableColumn<Event, Integer> capacityColumn;
+
+    ObservableList<Event> events = FXCollections.observableArrayList();
+
+    public void addEvent(ObservableList<Event> newEventsList){
+        events.addAll(newEventsList);
+        tableView.setItems(events);
+    }
+
+    public void deleteEvent(ActionEvent event){
+        int selectedID = tableView.getSelectionModel().getSelectedIndex();
+        tableView.getItems().remove(selectedID);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        eventIDColumn.setCellValueFactory(new PropertyValueFactory<Event, Integer>("eventID"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<Event, String>("title"));
+        categoryColumn.setCellValueFactory(new PropertyValueFactory<Event, String>("category"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<Event, String>("date"));
+        timeColumn.setCellValueFactory(new PropertyValueFactory<Event, String>("time"));
+        capacityColumn.setCellValueFactory(new PropertyValueFactory<Event, Integer>("capacity"));
+        locationColumn.setCellValueFactory(new PropertyValueFactory<Event, String>("location"));
+    }
 
     public void switchToUserScene(ActionEvent event) throws IOException{
         try {
@@ -30,11 +79,27 @@ public class AdminController {
 
     public void switchToAddEventScene(ActionEvent event) throws IOException{
         try {
-            root = FXMLLoader.load(getClass().getResource("AddEvent.fxml"));
-            stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+            events = tableView.getItems();
+            if (events != null) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource(("AddEvent.fxml")));
+                root = loader.load();
+
+                AddEventController addEventController = loader.getController();
+                addEventController.receiveObsList(events);
+
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+
+            else{
+                root = FXMLLoader.load(getClass().getResource("AddEvent.fxml"));
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
 
         }
         catch (IOException e) {
