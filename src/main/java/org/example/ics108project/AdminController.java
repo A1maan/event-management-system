@@ -80,6 +80,7 @@ public class AdminController implements Initializable {
     public void switchToAddEventScene(ActionEvent event) throws IOException{
         try {
             events = tableView.getItems();
+
             if (events != null) {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource(("AddEvent.fxml")));
                 root = loader.load();

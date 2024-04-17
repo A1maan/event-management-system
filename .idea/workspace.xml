@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="443e0dac-aad7-417f-a7cd-9a816ca4240e" name="Changes" comment="misc changes">
+    <list default="true" id="443e0dac-aad7-417f-a7cd-9a816ca4240e" name="Changes" comment="- Added functionality to the AddEvent scene and Delete Event Button&#10;- Added a Time text field in the AddEvent scene">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AddEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AddEventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/AddEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/AddEvent.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/Admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/Admin.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +24,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -102,7 +101,7 @@
       <workItem from="1712579350358" duration="1707000" />
       <workItem from="1713012714289" duration="14162000" />
       <workItem from="1713031853554" duration="43000" />
-      <workItem from="1713345513273" duration="10681000" />
+      <workItem from="1713345513273" duration="11307000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -216,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713031881432</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="- Added functionality to the AddEvent scene and Delete Event Button&#10;- Added a Time text field in the AddEvent scene">
+      <option name="closed" value="true" />
+      <created>1713362175077</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1713362175077</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +251,8 @@
     <MESSAGE value="change the stage name to event management system" />
     <MESSAGE value="changed the stage name to event management system" />
     <MESSAGE value="misc changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="misc changes" />
+    <MESSAGE value="- Added functionality to the AddEvent scene and Delete Event Button&#10;- Added a Time text field in the AddEvent scene" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added functionality to the AddEvent scene and Delete Event Button&#10;- Added a Time text field in the AddEvent scene" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
