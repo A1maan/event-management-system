@@ -44,7 +44,7 @@ public class AddEventController implements Initializable {
         currEventList = eventList;
     }
     public Event createEvent(ActionEvent e){
-        return new Event(titleField.getText(), categoryField.getValue(), descriptionField.getText(), dateField.getValue().toString(), timeField.getText(), Integer.parseInt(capacityField.getText()), locationField.getText());
+        return new Event(titleField.getText(), categoryField.getValue(), descriptionField.getText(), dateField.getValue(), timeField.getText(), Integer.parseInt(capacityField.getText()), locationField.getText());
     }
 
     @Override

@@ -16,6 +16,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class AdminController implements Initializable {
@@ -32,7 +34,7 @@ public class AdminController implements Initializable {
     @FXML
     private TableColumn<Event, String> categoryColumn;
     @FXML
-    private TableColumn<Event, String> dateColumn;
+    private TableColumn<Event, LocalDate> dateColumn;
     @FXML
     private TableColumn<Event, String> timeColumn;
     @FXML
@@ -41,9 +43,15 @@ public class AdminController implements Initializable {
     private TableColumn<Event, Integer> capacityColumn;
 
     ObservableList<Event> events = FXCollections.observableArrayList();
+    HashMap<Integer, Event> eventHashMap = new HashMap<>();
 
     public void addEvent(ObservableList<Event> newEventsList){
         events.addAll(newEventsList);
+
+        for (int i = 0; i < events.size(); i++){
+            eventHashMap.put(i + 1, events.get(i));
+        }
+
         tableView.setItems(events);
     }
 
@@ -57,7 +65,7 @@ public class AdminController implements Initializable {
         eventIDColumn.setCellValueFactory(new PropertyValueFactory<Event, Integer>("eventID"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<Event, String>("title"));
         categoryColumn.setCellValueFactory(new PropertyValueFactory<Event, String>("category"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<Event, String>("date"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<Event, LocalDate>("date"));
         timeColumn.setCellValueFactory(new PropertyValueFactory<Event, String>("time"));
         capacityColumn.setCellValueFactory(new PropertyValueFactory<Event, Integer>("capacity"));
         locationColumn.setCellValueFactory(new PropertyValueFactory<Event, String>("location"));
@@ -106,5 +114,22 @@ public class AdminController implements Initializable {
         catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void switchToEditEventScene(ActionEvent event) throws IOException {
+        int selectedID = tableView.getSelectionModel().getSelectedIndex(); // Returned index from [0, numOfRows - 1]
+        Event selectedEvent = eventHashMap.get(selectedID + 1);
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(("EditEvent.fxml")));
+        root = loader.load();
+
+        EditEventController editEventController = loader.getController();
+        editEventController.setupEditScene(selectedID, selectedEvent, eventHashMap, events);
+
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
     }
 }

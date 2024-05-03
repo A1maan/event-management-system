@@ -13,7 +13,7 @@
    <children>
       <Button layoutX="76.0" layoutY="50.0" mnemonicParsing="false" onAction="#switchToAddEventScene" text="Add Event" />
       <Button layoutX="152.0" layoutY="50.0" mnemonicParsing="false" onAction="#deleteEvent" text="Delete Event" />
-      <Button layoutX="241.0" layoutY="50.0" mnemonicParsing="false" text="Edit Event" />
+      <Button layoutX="241.0" layoutY="50.0" mnemonicParsing="false" onAction="#switchToEditEventScene" text="Edit Event" />
       <Rectangle arcHeight="5.0" fill="#849aae" height="400.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="72.0" />
       <Text fontSmoothingType="LCD" layoutX="238.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Page" textAlignment="CENTER">
          <font>

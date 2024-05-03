@@ -1,17 +1,20 @@
 package org.example.ics108project;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 public class Event {
     static Integer id = 0;
     private Integer eventId;
     private String title;
     private String description;
     private String category;
-    private String date;
+    private LocalDate date;
     private String time;
     private Integer capacity;
     private String location;
 
-    public Event(String title, String category, String description, String date, String time, Integer capacity, String location ){
+    public Event(String title, String category, String description, LocalDate date, String time, Integer capacity, String location ){
         id += 1;
 
         this.title = title;
@@ -48,7 +51,7 @@ public class Event {
         this.category = category;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -72,7 +75,7 @@ public class Event {
         return category;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
