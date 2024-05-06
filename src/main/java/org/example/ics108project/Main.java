@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 
 public class Main extends Application {
     @Override
@@ -14,6 +16,7 @@ public class Main extends Application {
             Parent root = FXMLLoader.load(getClass().getResource("Admin.fxml"));
             Scene scene = new Scene(root);
             stage.setTitle("Event Management System");
+            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
             stage.setScene(scene);
             stage.show();
         }

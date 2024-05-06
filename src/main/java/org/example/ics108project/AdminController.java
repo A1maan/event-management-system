@@ -73,7 +73,7 @@ public class AdminController implements Initializable {
 
     public void switchToUserScene(ActionEvent event) throws IOException{
         try {
-             root = FXMLLoader.load(getClass().getResource("User.fxml"));
+             Parent root = FXMLLoader.load(getClass().getResource("User.fxml"));
              stage = (Stage)((Node) event.getSource()).getScene().getWindow();
              scene = new Scene(root);
              stage.setScene(scene);

@@ -1,14 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.AmbientLight?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.ics108project.User"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.UserController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93b079" height="70.0" stroke="TRANSPARENT" strokeType="INSIDE" width="600.0" />
+      <AmbientLight color="CHARTREUSE" layoutX="165.0" layoutY="35.0" lightOn="true" />
+      <Text fontSmoothingType="LCD" layoutX="-13.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EventADOR" textAlignment="CENTER" wrappingWidth="165.47003173828125">
+         <fill>
+            <LinearGradient endX="1.0">
+               <stops>
+                  <Stop color="#618741" />
+                  <Stop color="#618741" offset="0.007662835249042145" />
+                  <Stop color="#4f4f4f" offset="0.7136574896973048" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <font>
+            <Font name="Bookshelf Symbol 7" size="22.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="32.0" fitWidth="49.0" layoutX="48.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icsProjLogo.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="homeIcon" fill="#101010" layoutX="235.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home" textAlignment="CENTER" wrappingWidth="43.61180663108826">
+         <font>
+            <Font name="Dubai Regular" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="adminIcon" fill="WHITE" layoutX="308.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Page" textAlignment="CENTER" wrappingWidth="94.94518065452576">
+         <font>
+            <Font name="Dubai Regular" size="16.0" />
+         </font>
+      </Text>
+      <TextField layoutX="124.0" layoutY="94.0" prefHeight="32.0" prefWidth="265.0" promptText="Search by Event" style="-fx-background-radius: 25; -fx-border-color: #618741; -fx-border-radius: 25;">
+         <font>
+            <Font name="Dubai Light" size="12.0" />
+         </font>
+      </TextField>
+      <DatePicker id="datePicker" layoutX="422.0" layoutY="94.0" prefHeight="32.0" prefWidth="151.0" promptText="Search by Date" style="-fx-border-color: #618741; -fx-radius: 25; -fx-background-radius: 25; -fx-border-radius: 25;" stylesheets="@style.css">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </DatePicker>
+      <Text fontSmoothingType="LCD" layoutX="18.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-line-spacing: 0.25px;" text="Filter by" wrappingWidth="60.945184708572924">
+         <font>
+            <Font name="Dubai Medium" size="14.0" />
+         </font>
+      </Text>
+      <Line endX="-40.0548095703125" layoutX="119.0" layoutY="129.0" startX="-100.0" stroke="#618741" strokeWidth="2.0" />
+      <Text fontSmoothingType="LCD" layoutX="18.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-line-spacing: 0.25px;" text="Category" wrappingWidth="60.945184708572924">
+         <font>
+            <Font name="Dubai Medium" size="14.0" />
+         </font>
+      </Text>
+      <CheckBox layoutX="18.0" layoutY="146.0" mnemonicParsing="false" text="Business" />
+      <CheckBox layoutX="18.0" layoutY="176.0" mnemonicParsing="false" text="Educational" />
+      <CheckBox layoutX="18.0" layoutY="206.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="101.0" text="Entertainment" />
+      <CheckBox layoutX="18.0" layoutY="236.0" mnemonicParsing="false" text="Fashion" />
+      <CheckBox layoutX="18.0" layoutY="266.0" mnemonicParsing="false" text="Festival" />
+      <CheckBox layoutX="18.0" layoutY="296.0" mnemonicParsing="false" text="Food" />
+      <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="356.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@searchIcon2.png" />
+         </image>
+      </ImageView>
+      <CheckBox layoutX="18.0" layoutY="326.0" mnemonicParsing="false" text="Sports" />
+      <CheckBox layoutX="18.0" layoutY="356.0" mnemonicParsing="false" text="Technology" />
+      <ScrollBar layoutX="586.0" layoutY="70.0" orientation="VERTICAL" prefHeight="333.0" prefWidth="14.0" />
+      <GridPane layoutX="135.0" layoutY="166.0" prefHeight="90.0" prefWidth="426.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Rectangle arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="109.0" stroke="#93b079" strokeType="INSIDE" strokeWidth="2.0" width="426.0" GridPane.rowSpan="5" />
+            <ImageView blendMode="DARKEN" fitHeight="109.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" GridPane.rowSpan="3">
+               <image>
+                  <Image url="@defualtImage.jpg" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Title" wrappingWidth="278.35200119018555" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Dubai Regular" size="24.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="56.136688232421875" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Dubai Regular" size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="152.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tickets Available" wrappingWidth="98.80337524414062" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Dubai Regular" size="14.0" />
+               </font>
+            </Text>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" style="-fx-background-radius: 25; -fx-border-radius: 25; -fx-background-color: #618741;" text="Book Event" textFill="#fbfafa" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="25.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </children>
 </AnchorPane>
