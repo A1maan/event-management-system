@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="443e0dac-aad7-417f-a7cd-9a816ca4240e" name="Changes" comment="added few new base files">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/eventCardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/EventCard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AddEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AddEventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/Admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/Admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/User.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/User.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/project-images/Hamburger_icon.svg.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,12 +77,29 @@
       <recent name="$PROJECT_DIR$/src/main/resources/org/example/ics108project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dr.Rehab Gwada\OneDrive\Desktop\java project\EventManagementSystem\src\main\java" />
       <recent name="C:\Users\Dr.Rehab Gwada\OneDrive\Desktop\ICS 104\ICS-108-Lab 24\EventManagementSystem\src\main\resources\org\example\ics108project" />
       <recent name="C:\Users\Dr.Rehab Gwada\OneDrive\Desktop\ICS 104\ICS-108-Lab 24\EventManagementSystem\src\main\java\org\example\ics108project" />
       <recent name="C:\Users\Dr.Rehab Gwada\OneDrive\Desktop\ICS 104\ICS-108-Lab 24\EventManagementSystem\src\main\java\org\example" />
       <recent name="C:\Users\Dr.Rehab Gwada\OneDrive\Desktop\ICS 104\ICS-108-Lab 24\EventManagementSystem\src\main\resources" />
-      <recent name="C:\Users\Dr.Rehab Gwada\OneDrive\Desktop\ICS 104\ICS-108-Lab 24\EventManagementSystem\src" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.example.ics108project" />
+      <recent name="org" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -112,7 +130,10 @@
       <workItem from="1713956432362" duration="16000" />
       <workItem from="1714029996872" duration="156000" />
       <workItem from="1714732881742" duration="9612000" />
-      <workItem from="1715005885212" duration="13278000" />
+      <workItem from="1715005885212" duration="13584000" />
+      <workItem from="1715028415272" duration="20000" />
+      <workItem from="1715273239963" duration="1832000" />
+      <workItem from="1715275426692" duration="9250000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -242,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713362803777</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="added few new base files">
+      <option name="closed" value="true" />
+      <created>1715028093456</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1715028093456</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -54,7 +54,13 @@ public class AddEventController implements Initializable {
 
     public void switchToUserScene(ActionEvent event) throws IOException {
         try {
-            root = FXMLLoader.load(getClass().getResource("User.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("User.fxml"));
+
+            // the next code block to pass the created event to userController
+            root = loader.load();
+            UserController userController = loader.getController();
+            userController.displayData(currEventList);
+            //
             stage = (Stage)((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
