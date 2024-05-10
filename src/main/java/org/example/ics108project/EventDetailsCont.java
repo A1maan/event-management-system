@@ -98,6 +98,7 @@ public class EventDetailsCont implements Initializable {
     public void openConfirmation(ActionEvent event){
         coverScreen.setVisible(true);
         confirmAnchor.setVisible(true);
+
     }
 
     public void cancelConfirmation() throws IOException{
