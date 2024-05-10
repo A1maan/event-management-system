@@ -13,7 +13,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,6 +28,8 @@ import java.util.ResourceBundle;
 public class EventDetailsCont implements Initializable {
 
     ObservableList<Event> events = FXCollections.observableArrayList();
+    Event currEvent;
+    boolean alrdyConfirmed = true;
 
     private Stage stage;
     private Scene scene;
@@ -45,12 +51,37 @@ public class EventDetailsCont implements Initializable {
     Label ticketsText;
     @FXML
     Button bookingButton;
+    @FXML
+    AnchorPane confirmAnchor;
+    @FXML
+    Rectangle coverScreen;
+    @FXML
+    ImageView cancelBooking;
+    @FXML
+    Button confirmBooking;
+    @FXML
+    TextField fullName;
+    @FXML
+    TextField email;
+    @FXML
+    Label errorMessage;
+    @FXML
+    ImageView ticket;
+    @FXML
+    Label ticketName;
+    @FXML
+    Label ticketEvent;
+    @FXML
+    Label l1;
+    @FXML
+    Label l2;
 
     public void saveData(ObservableList<Event> passedEvents){
         events.addAll(passedEvents);
     }
 
     public void displayData(Event event){
+        currEvent = event;
         titleText.setText(event.getTitle());
         descriptionText.setText(event.getDescription());
 
@@ -63,6 +94,53 @@ public class EventDetailsCont implements Initializable {
         categoryText.setText(event.getCategory());
     }
 
+    // confirm booking and sending ticket through email methods
+    public void openConfirmation(ActionEvent event){
+        coverScreen.setVisible(true);
+        confirmAnchor.setVisible(true);
+    }
+
+    public void cancelConfirmation() throws IOException{
+        coverScreen.setVisible(false);
+        confirmAnchor.setVisible(false);
+    }
+
+    public void sendTicket() throws IOException{
+        String userName = fullName.getText();
+        String userEmail = email.getText();
+
+        if (userName.isEmpty() || userEmail.isEmpty() || !userEmail.contains("@gmail.com")){
+            fullName.setText("");
+            email.setText("");
+            errorMessage.setVisible(true);
+
+        }else{
+            errorMessage.setVisible(false);
+            fullName.setVisible(false);
+            email.setVisible(false);
+            confirmBooking.setVisible(false);
+            l1.setVisible(false);
+            l2.setVisible(false);
+
+            ticketName.setText(userName);
+            ticketEvent.setText(currEvent.getTitle());
+            ticket.setVisible(true);
+            ticketEvent.setVisible(true);
+            ticketName.setVisible(true);
+
+
+
+            for (int i = 0; i < events.size(); i++){
+                if (events.get(i) == currEvent){
+                    events.get(i).setCapacity(events.get(i).getCapacity() - 1);
+                    ticketsText.setText("Tickets Left: " + events.get(i).getCapacity());
+                }
+            }
+        }
+
+    }
+
+    // switching scenes methods
     public void switchToAdminScene(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
 
