@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.AmbientLight?>
 <?import javafx.scene.Cursor?>
@@ -7,6 +8,7 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -20,7 +22,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="413.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.UserController">
+<AnchorPane prefHeight="413.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.UserController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93b079" height="70.0" stroke="TRANSPARENT" strokeType="INSIDE" width="600.0" />
       <AmbientLight color="CHARTREUSE" layoutX="165.0" layoutY="35.0" lightOn="true" />
@@ -107,20 +109,21 @@
             <Image url="@project-images/noEventsFound.png" />
          </image>
       </ImageView>
-      <Button fx:id="homePage" layoutX="192.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: &quot;transparent&quot;;" text="Home" textFill="WHITE">
+      <Button fx:id="homePage" layoutX="426.0" layoutY="20.0" mnemonicParsing="false" style="-fx-background-color: &quot;transparent&quot;;" text="Home">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="userPage" layoutX="220.0" layoutY="9.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: &quot;transparent&quot;;" text="User Page">
+         <font>
+            <Font name="Euphemia UCAS Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="adminPage" layoutX="493.0" layoutY="20.0" mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-color: &quot;transparent&quot;;" text="Admin Page" textFill="WHITE">
          <font>
             <Font name="Dubai Regular" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="userPage" layoutX="257.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: &quot;transparent&quot;;" text="User Page">
-         <font>
-            <Font name="Dubai Regular" size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="adminPage" layoutX="346.0" layoutY="15.0" mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-color: &quot;transparent&quot;;" text="Admin Page" textFill="WHITE">
-         <font>
-            <Font name="Dubai Regular" size="16.0" />
-         </font>
-      </Button>
+      <Separator layoutX="488.0" layoutY="18.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="2.0" style="-fx-border-color: transparent;" />
    </children>
 </AnchorPane>

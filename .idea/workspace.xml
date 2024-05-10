@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="443e0dac-aad7-417f-a7cd-9a816ca4240e" name="Changes" comment="added few new base files" />
+    <list default="true" id="443e0dac-aad7-417f-a7cd-9a816ca4240e" name="Changes" comment="added few new base files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/Admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/Admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/User.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/User.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -69,34 +73,17 @@
       <recent name="$PROJECT_DIR$/src/main/resources/org/example/ics108project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Dr.Rehab Gwada\OneDrive\Desktop\java project\EventManagementSystem\src\main\java" />
-      <recent name="C:\Users\Dr.Rehab Gwada\OneDrive\Desktop\ICS 104\ICS-108-Lab 24\EventManagementSystem\src\main\resources\org\example\ics108project" />
-      <recent name="C:\Users\Dr.Rehab Gwada\OneDrive\Desktop\ICS 104\ICS-108-Lab 24\EventManagementSystem\src\main\java\org\example\ics108project" />
-      <recent name="C:\Users\Dr.Rehab Gwada\OneDrive\Desktop\ICS 104\ICS-108-Lab 24\EventManagementSystem\src\main\java\org\example" />
-      <recent name="C:\Users\Dr.Rehab Gwada\OneDrive\Desktop\ICS 104\ICS-108-Lab 24\EventManagementSystem\src\main\resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources/org/example/ics108project" />
+      <recent name="$PROJECT_DIR$/src/main/resources/org/example/ics108project/project-images" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/example/ics108project" />
+      <recent name="$PROJECT_DIR$/src/main/resources/org/example/ics108project/example" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="org.example.ics108project" />
-      <recent name="org" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-f644763e9732-c0c073db" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-f644763e9732-a81d5c7c" />
       </set>
     </attachedChunks>
   </component>
@@ -122,11 +109,6 @@
       <workItem from="1713956432362" duration="16000" />
       <workItem from="1714029996872" duration="156000" />
       <workItem from="1714732881742" duration="9612000" />
-      <workItem from="1715005885212" duration="13584000" />
-      <workItem from="1715028415272" duration="20000" />
-      <workItem from="1715273239963" duration="1832000" />
-      <workItem from="1715275426692" duration="9321000" />
-      <workItem from="1715290313891" duration="29879000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -256,39 +238,7 @@
       <option name="project" value="LOCAL" />
       <updated>1713362803777</updated>
     </task>
-    <task id="LOCAL-00017" summary="added few new base files">
-      <option name="closed" value="true" />
-      <created>1715028093456</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1715028093456</updated>
-    </task>
-    <task id="LOCAL-00018" summary="added few new base files">
-      <option name="closed" value="true" />
-      <created>1715290284977</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1715290284977</updated>
-    </task>
-    <task id="LOCAL-00019" summary="added few new base files">
-      <option name="closed" value="true" />
-      <created>1715321437182</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1715321437182</updated>
-    </task>
-    <task id="LOCAL-00020" summary="added few new base files">
-      <option name="closed" value="true" />
-      <created>1715326297814</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1715326297814</updated>
-    </task>
-    <option name="localTasksCounter" value="21" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,6 +269,17 @@
     <MESSAGE value="- Added functionality to the AddEvent scene and Delete Event Button&#10;- Added a Time text field in the AddEvent scene" />
     <MESSAGE value="added few new base files" />
     <option name="LAST_COMMIT_MESSAGE" value="added few new base files" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/ics108project/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
