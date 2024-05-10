@@ -49,7 +49,7 @@ public class EventCardController implements Initializable {
         events.add(event);
         InputStream stream = null;
         try {
-            stream = new FileInputStream("C:\\Users\\Dr.Rehab Gwada\\OneDrive\\Desktop\\java project\\EventManagementSystem\\src\\main\\resources\\org\\example\\ics108project\\project-images\\defualtImage.jpg");
+            stream = new FileInputStream("src\\main\\resources\\org\\example\\ics108project\\project-images\\defualtImage.jpg");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
