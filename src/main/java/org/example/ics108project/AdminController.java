@@ -73,17 +73,27 @@ public class AdminController implements Initializable {
 
     public void switchToUserScene(ActionEvent event) throws IOException{
         try {
-             FXMLLoader loader = new FXMLLoader(getClass().getResource("User.fxml"));
-             // the next code block to pass the created event to userController
-             root = loader.load();
-             UserController userController = loader.getController();
-             userController.displayData(events);
-             //
-             stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-             scene = new Scene(root);
-             stage.setScene(scene);
-             stage.show();
+            events = tableView.getItems();
 
+            if (events != null){
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("User.fxml"));
+                // the next code block to pass the created event to userController
+                root = loader.load();
+                UserController userController = loader.getController();
+                userController.displayData(events);
+                //
+                stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+            else{
+                root = FXMLLoader.load(getClass().getResource("User.fxml"));
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
         }
         catch (IOException e) {
             throw new RuntimeException(e);
