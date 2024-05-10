@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="443e0dac-aad7-417f-a7cd-9a816ca4240e" name="Changes" comment="change AdminController">
+    <list default="true" id="443e0dac-aad7-417f-a7cd-9a816ca4240e" name="Changes" comment="change Admin.fxml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/EventCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/EventCardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/AddEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/AddEvent.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/Admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/Admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/EditEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/EditEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AdminController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +72,8 @@
       <recent name="$PROJECT_DIR$/src/main/resources/org/example/ics108project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/org/example/ics108project/project-images" />
       <recent name="$PROJECT_DIR$/src/main/resources/org/example/ics108project" />
+      <recent name="$PROJECT_DIR$/src/main/resources/org/example/ics108project/project-images" />
       <recent name="$PROJECT_DIR$/src/main/java/org/example/ics108project" />
       <recent name="$PROJECT_DIR$/src/main/resources/org/example/ics108project/example" />
       <recent name="$PROJECT_DIR$/src/main/java" />
@@ -111,7 +108,7 @@
       <workItem from="1713956432362" duration="16000" />
       <workItem from="1714029996872" duration="156000" />
       <workItem from="1714732881742" duration="9612000" />
-      <workItem from="1715328785841" duration="4763000" />
+      <workItem from="1715328785841" duration="244000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -249,15 +246,7 @@
       <option name="project" value="LOCAL" />
       <updated>1715328758774</updated>
     </task>
-    <task id="LOCAL-00018" summary="change AdminController">
-      <option name="closed" value="true" />
-      <created>1715329259223</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1715329259223</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,8 +277,7 @@
     <MESSAGE value="- Added functionality to the AddEvent scene and Delete Event Button&#10;- Added a Time text field in the AddEvent scene" />
     <MESSAGE value="added few new base files" />
     <MESSAGE value="change Admin.fxml" />
-    <MESSAGE value="change AdminController" />
-    <option name="LAST_COMMIT_MESSAGE" value="change AdminController" />
+    <option name="LAST_COMMIT_MESSAGE" value="change Admin.fxml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
