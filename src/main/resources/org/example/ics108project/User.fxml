@@ -105,7 +105,7 @@
       </Button>
       <ImageView fx:id="errorFilter" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" translateX="300.0" translateY="180.0" visible="false">
          <image>
-            <Image url="@project-images/No%20Events%20Found.png" />
+            <Image url="@project-images/noEventsFound.png" />
          </image>
       </ImageView>
       <Button fx:id="homePage" layoutX="192.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: &quot;transparent&quot;;" text="Home" textFill="WHITE">
