@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: &quot;white&quot;;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.EventDetailsCont">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4e3ca78" height="304.0" layoutX="296.0" layoutY="84.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="290.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93b079" height="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
+      <Text fontSmoothingType="LCD" layoutX="-10.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EventADOR" textAlignment="CENTER" translateY="-8.0" wrappingWidth="165.47003173828125">
+         <fill>
+            <LinearGradient endX="1.0">
+               <stops>
+                  <Stop color="#618741" />
+                  <Stop color="#618741" offset="0.007662835249042145" />
+                  <Stop color="#4f4f4f" offset="0.7136574896973048" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <font>
+            <Font name="Bookshelf Symbol 7" size="22.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="32.0" fitWidth="49.0" layoutX="49.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" translateY="-8.0">
+         <image>
+            <Image url="@project-images/icsProjLogo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="216.0" fitWidth="270.0" layoutX="14.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@project-images/defualtImage.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="223.0" layoutX="2.0" layoutY="76.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="10.0" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="282.0" />
+      <Label fx:id="titleText" layoutX="309.0" layoutY="91.0" prefHeight="32.0" prefWidth="265.0" text="Event Title">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="24.0" />
+         </font>
+      </Label>
+      <Accordion layoutX="301.0" layoutY="299.0" />
+      <Label layoutX="313.0" layoutY="133.0" prefHeight="32.0" prefWidth="265.0" text="Description:">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="descriptionText" alignment="TOP_LEFT" layoutX="321.0" layoutY="165.0" prefHeight="59.0" prefWidth="241.0" text="Description....................">
+         <font>
+            <Font name="Berlin Sans FB" size="12.0" />
+         </font>
+      </Label>
+      <Circle fill="#94b079ae" layoutX="304.0" layoutY="150.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Label layoutX="313.0" layoutY="220.0" prefHeight="32.0" prefWidth="265.0" text="Date &amp; Time:">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+         </font>
+      </Label>
+      <Circle fill="#94b079ae" layoutX="304.0" layoutY="237.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Label fx:id="dateText" layoutX="321.0" layoutY="252.0" prefHeight="22.0" prefWidth="241.0" text="Date">
+         <font>
+            <Font name="Berlin Sans FB" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="timeText" layoutX="321.0" layoutY="274.0" prefHeight="22.0" prefWidth="241.0" text="Time">
+         <font>
+            <Font name="Berlin Sans FB" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="313.0" layoutY="299.0" prefHeight="32.0" prefWidth="265.0" text="Location">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+         </font>
+      </Label>
+      <Circle fill="#94b079ae" layoutX="304.0" layoutY="316.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Label fx:id="locationText" alignment="TOP_LEFT" layoutX="321.0" layoutY="331.0" prefHeight="51.0" prefWidth="241.0" text="location">
+         <font>
+            <Font name="Berlin Sans FB" size="12.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#d4e3cae4" height="22.0" layoutX="56.0" layoutY="86.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="175.0" />
+      <Label fx:id="categoryText" alignment="CENTER" layoutX="56.0" layoutY="86.0" prefHeight="22.0" prefWidth="175.0" text="Category" textAlignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="bookingButton" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #618741; -fx-background-radius: 30;" text="Book Your Ticket" textFill="WHITE">
+         <font>
+            <Font name="Dubai Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="ticketsText" alignment="CENTER" layoutX="32.0" layoutY="338.0" prefHeight="22.0" prefWidth="95.0" text="Tickets Left:" textAlignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="homePage" layoutX="194.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: &quot;transparent&quot;;" text="Home" textFill="WHITE">
+         <font>
+            <Font name="Dubai Regular" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="userPage" layoutX="255.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToUserScene" style="-fx-background-color: &quot;transparent&quot;;" text="User Page" textFill="WHITE">
+         <font>
+            <Font name="Dubai Regular" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="adminPage" layoutX="343.0" layoutY="15.0" mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-color: &quot;transparent&quot;;" text="Admin Page" textFill="WHITE">
+         <font>
+            <Font name="Dubai Regular" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

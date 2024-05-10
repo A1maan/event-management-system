@@ -14,7 +14,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage){
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("EventCard.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Admin.fxml"));
             Scene scene = new Scene(root);
             stage.setTitle("Event Management System");
             scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
