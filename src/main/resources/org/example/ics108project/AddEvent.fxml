@@ -1,63 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.AddEventController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.AddEventController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="196.0" minHeight="4.0" prefHeight="51.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="396.0" minHeight="10.0" prefHeight="341.0" vgrow="SOMETIMES" />
+  </rowConstraints>
    <children>
-      <Text fontSmoothingType="LCD" layoutX="281.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Event" textAlignment="CENTER">
+      <Rectangle arcHeight="5.0" fill="#93b079" height="57.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="601.0" GridPane.halignment="CENTER" />
+      <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Event" textAlignment="CENTER" GridPane.halignment="CENTER">
          <font>
             <Font name="Euphemia UCAS Bold" size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="titleField" layoutX="204.0" layoutY="70.0" prefHeight="26.0" prefWidth="313.0" />
-      <TextArea fx:id="descriptionField" layoutX="204.0" layoutY="101.0" prefHeight="47.0" prefWidth="313.0" />
-      <DatePicker fx:id="dateField" layoutX="204.0" layoutY="186.0" prefHeight="26.0" prefWidth="153.0" />
-      <Button layoutX="273.0" layoutY="328.0" mnemonicParsing="false" onAction="#switchToAdminScene" text="Create Event" textAlignment="CENTER">
-         <font>
-            <Font name="Euphemia UCAS Bold" size="18.0" />
-         </font>
-      </Button>
-      <TextField fx:id="capacityField" layoutX="204.0" layoutY="245.0" prefHeight="26.0" prefWidth="313.0" />
-      <TextArea fx:id="locationField" layoutX="204.0" layoutY="275.0" prefHeight="47.0" prefWidth="313.0" />
-      <Label layoutX="136.0" layoutY="73.0" text=" Event Title:" textAlignment="CENTER" />
-      <Label layoutX="133.0" layoutY="103.0" text="Description:" textAlignment="CENTER" />
-      <Label layoutX="145.0" layoutY="156.0" text="Category:" textAlignment="CENTER" />
-      <Label layoutX="170.0" layoutY="190.0" text="Date:" textAlignment="CENTER" />
-      <Label layoutX="147.0" layoutY="246.0" text="Capacity:" textAlignment="CENTER" />
-      <Label layoutX="144.0" layoutY="275.0" text="Location:" textAlignment="CENTER">
-         <font>
-            <Font name="Euphemia UCAS" size="13.0" />
-         </font>
-      </Label>
-      <Rectangle arcHeight="5.0" fill="#849aae" height="400.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="72.0" />
-      <Button layoutX="10.0" layoutY="61.0" mnemonicParsing="false" onAction="#switchToUserScene" prefHeight="25.0" prefWidth="53.0" text="User">
-         <font>
-            <Font name="Euphemia UCAS Bold" size="12.0" />
-         </font>
-      </Button>
-      <Text layoutX="12.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scenes">
-         <font>
-            <Font name="Euphemia UCAS Bold" size="14.0" />
-         </font>
-      </Text>
-      <Line endX="38.0" layoutX="34.0" layoutY="24.0" startX="-100.0" stroke="#cad4dd" />
-      <Button layoutX="5.0" layoutY="30.0" mnemonicParsing="false" onAction="#switchToAdminScene" prefHeight="25.0" prefWidth="63.0" text="Admin">
-         <font>
-            <Font name="Euphemia UCAS Bold" size="12.0" />
-         </font>
-      </Button>
-      <ChoiceBox fx:id="categoryField" layoutX="204.0" layoutY="154.0" prefWidth="150.0" />
-      <TextField fx:id="timeField" layoutX="204.0" layoutY="216.0" prefHeight="26.0" prefWidth="153.0" />
-      <Label layoutX="169.0" layoutY="220.0" text="Time:" textAlignment="CENTER" />
+      <GridPane prefHeight="324.0" prefWidth="600.0" GridPane.rowIndex="1">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="260.0" minWidth="10.0" prefWidth="177.0" />
+            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="425.0" minWidth="10.0" prefWidth="423.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="27.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="82.0" minHeight="0.0" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="82.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <TextField fx:id="titleField" prefHeight="26.0" prefWidth="313.0" style="-fx-background-radius: 25; -fx-border-color: black; -fx-border-radius: 25; -fx-border-width: 0.5;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextArea fx:id="descriptionField" prefHeight="47.0" prefWidth="313.0" style="-fx-background-color: #ebedeb; -fx-border-color: black; -fx-border-width: 0.5; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </TextArea>
+            <DatePicker fx:id="dateField" prefHeight="26.0" prefWidth="153.0" style="-fx-border-radius: 5; -fx-background-color: #ebedeb; -fx-border-color: black; -fx-border-width: 0.5;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </DatePicker>
+            <TextField fx:id="capacityField" prefHeight="26.0" prefWidth="313.0" style="-fx-background-radius: 25; -fx-border-radius: 25; -fx-border-color: black; -fx-border-width: 0.5;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextArea fx:id="locationField" prefHeight="47.0" prefWidth="313.0" style="-fx-border-width: 0.5; -fx-border-color: black; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </TextArea>
+            <Label text=" Event Title:" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <Label text="Description:" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <Label text="Category:" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+            <Label text="Date:" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+            <Label text="Capacity:" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+            <Label text="Location:" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+               <font>
+                  <Font name="Euphemia UCAS" size="13.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="categoryField" prefWidth="150.0" style="-fx-background-radius: 25; -fx-background-color: white; -fx-border-color: black; -fx-border-width: 0.5; -fx-border-radius: 25;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </ChoiceBox>
+            <TextField fx:id="timeField" prefHeight="26.0" prefWidth="153.0" style="-fx-background-radius: 25; -fx-border-radius: 25; -fx-border-width: 0.5; -fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <Label text="Time:" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+            <Button mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-radius: 25; -fx-background-color: #618741;" text="Edit Event" textAlignment="CENTER" textFill="WHITE" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.rowSpan="2147483647">
+               <font>
+                  <Font name="Euphemia UCAS Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
    </children>
-</AnchorPane>
+</GridPane>
