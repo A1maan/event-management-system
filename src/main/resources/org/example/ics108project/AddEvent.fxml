@@ -93,11 +93,16 @@
                </GridPane.margin>
             </TextField>
             <Label text="Time:" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
-            <Button mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-radius: 25; -fx-background-color: #618741;" text="Edit Event" textAlignment="CENTER" textFill="WHITE" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.rowSpan="2147483647">
+            <Button mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-radius: 25; -fx-background-color: #618741;" text="Add Event" textAlignment="CENTER" textFill="WHITE" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.rowSpan="2147483647">
                <font>
                   <Font name="Euphemia UCAS Bold" size="18.0" />
                </font>
             </Button>
+            <Text fx:id="invalidText" fill="#d00606" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="Invalid Date!" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
          </children>
       </GridPane>
    </children>

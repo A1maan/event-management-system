@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="443e0dac-aad7-417f-a7cd-9a816ca4240e" name="Changes" comment="change Admin.fxml">
+    <list default="true" id="443e0dac-aad7-417f-a7cd-9a816ca4240e" name="Changes" comment="change AddEvent and EditEvent UI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AddEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/AddEventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/EditEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/EditEventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/AddEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/AddEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/Admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/Admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/EditEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/EditEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/EventDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/EventDetails.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/User.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/User.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

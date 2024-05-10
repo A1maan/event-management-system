@@ -93,6 +93,11 @@
                   <Font name="Euphemia UCAS Bold" size="18.0" />
                </font>
             </Button>
+            <Text fx:id="invalidText" fill="#d00606" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="Invalid Date!" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
          </children>
       </GridPane>
       <Rectangle arcHeight="5.0" fill="#93b079" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="601.0" />

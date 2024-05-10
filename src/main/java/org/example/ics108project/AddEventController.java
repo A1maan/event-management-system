@@ -15,7 +15,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 
 public class AddEventController implements Initializable {
     private Stage stage;
@@ -37,6 +40,9 @@ public class AddEventController implements Initializable {
     @FXML
     private TextArea locationField;
 
+    @FXML
+    private Text invalidText;
+
     private ObservableList<Event> currEventList;
     private String[] categoriesArray = {"Entertainment", "Business", "Educational", "Sports", "Food", "Technology", "Fashion", "Festival"};
 
@@ -52,41 +58,32 @@ public class AddEventController implements Initializable {
         categoryField.getItems().addAll(categoriesArray);
     }
 
-    public void switchToUserScene(ActionEvent event) throws IOException {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("User.fxml"));
+    public void switchToAdminScene(ActionEvent event) throws IOException{
+        LocalDate currDate = LocalDate.now();
 
-            // the next code block to pass the created event to userController
+        if (dateField.getValue().isBefore(currDate)){
+            invalidText.setVisible(true);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Invalid Date");
+            alert.setHeaderText("Invalid Date");
+            alert.setContentText("Cannot choose a date before the current/present date!\nPlease choose either today's date or a future date.");
+            alert.showAndWait();
+        }
+        else{
+            Event newEvent = createEvent(event);
+
+            currEventList.add(newEvent);
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
             root = loader.load();
-            UserController userController = loader.getController();
-            userController.displayData(currEventList);
-            //
-            stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+
+            AdminController adminController = loader.getController();
+            adminController.addEvent(currEventList);
+
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-
         }
-        catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void switchToAdminScene(ActionEvent event) throws IOException{
-        Event newEvent = createEvent(event);
-
-        currEventList.add(newEvent);
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
-        root = loader.load();
-
-        AdminController adminController = loader.getController();
-        adminController.addEvent(currEventList);
-
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
     }
 }

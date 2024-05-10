@@ -109,9 +109,9 @@
             <Image url="@project-images/noEventsFound.png" />
          </image>
       </ImageView>
-      <Button fx:id="homePage" layoutX="426.0" layoutY="20.0" mnemonicParsing="false" style="-fx-background-color: &quot;transparent&quot;;" text="Home">
+      <Button fx:id="homePage" layoutX="421.0" layoutY="17.0" mnemonicParsing="false" style="-fx-background-color: &quot;transparent&quot;;" text="Home">
          <font>
-            <Font size="16.0" />
+            <Font name="Euphemia UCAS Bold" size="16.0" />
          </font>
       </Button>
       <Button fx:id="userPage" layoutX="220.0" layoutY="9.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: &quot;transparent&quot;;" text="User Page">
