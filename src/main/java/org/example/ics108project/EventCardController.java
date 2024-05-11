@@ -24,6 +24,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class EventCardController implements Initializable {
@@ -46,40 +47,35 @@ public class EventCardController implements Initializable {
     }
 
     public void setData(Event event){
-        events.add(event);
-        InputStream stream = null;
-        try {
-            stream = new FileInputStream("/Users/almaan/Library/CloudStorage/OneDrive-KFUPM/Class Notes/Term-232/ICS108/ICS108-Project/src/main/resources/org/example/ics108project/project-images/defualtImage.jpg");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+        if (!events.contains(event)){
+            events.add(event);
         }
 
-        Image image = new Image(stream);
         eventImage.setImage(event.getImage());
         eventTitle.setText(event.getTitle());
-        eventDate.setText(event.getDate().toString());
+        String formattedDate = event.getDate().format(DateTimeFormatter.ofPattern("MMM-dd-yyyy"));
+        eventDate.setText(formattedDate);
         eventTickets.setText(event.getCapacity().toString());
-
     }
 
     public void switchToEventDetailsScene(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("EventDetails.fxml"));
 
-        // the next code block to pass the chosen event to eventDetails
         root = loader.load();
         EventDetailsCont eventDetailsCont = loader.getController();
+        eventDetailsCont.saveData(events);
         for (Event ev: events){
             if (ev.getTitle().equals(eventTitle.getText())){
-                eventDetailsCont.displayData(ev, events);
+                eventDetailsCont.displayData(ev);
                 break;
             }
         }
-        eventDetailsCont.saveData(events);
-
         //
         stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+
+
 }

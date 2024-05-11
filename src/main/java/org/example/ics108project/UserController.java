@@ -8,13 +8,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -29,6 +27,8 @@ public class UserController implements Initializable  {
 
     ObservableList<Event> events = FXCollections.observableArrayList();
     ObservableList<Event> filterEvents = FXCollections.observableArrayList();
+
+    static ObservableList<Users> users = FXCollections.observableArrayList();
 
     private Stage stage;
     private Scene scene;
@@ -60,6 +60,10 @@ public class UserController implements Initializable  {
     CheckBox techTag;
     @FXML
     CheckBox foodTag;
+    @FXML
+    Button loginButton;
+
+
     public void displayData(ObservableList<Event> event){
         events.addAll(event);
         try {
@@ -123,7 +127,7 @@ public class UserController implements Initializable  {
         dateLabel.setText(formattedDate);
 
         for (Event event : events) {
-            if (!event.getDate().toString().equals(chosenDate.toString()) && !filterEvents.contains(event)) {
+            if (event.getDate().toString().equals(chosenDate.toString()) && !filterEvents.contains(event)) {
                 filterEvents.add(event);
             }
         }
@@ -202,8 +206,32 @@ public class UserController implements Initializable  {
         stage.show();
 
     }
+
+    public void switchToLoginScene(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+        root = loader.load();
+
+        LoginController loginController = loader.getController();
+        loginController.checker(loginButton.getText());
+
+        stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public ObservableList<Event>  sendData(){
+        return events;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        datePicker.setDayCellFactory(param -> new DateCell() {
+            @Override
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                setDisable(empty || date.compareTo(LocalDate.now()) < 0 );
+            }
+        });
     }
 }

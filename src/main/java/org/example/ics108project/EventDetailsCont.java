@@ -8,6 +8,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -82,7 +83,7 @@ public class EventDetailsCont implements Initializable {
         events.addAll(passedEvents);
     }
 
-    public void displayData(Event event, ObservableList<Event> events){
+    public void displayData(Event event){
         currEvent = event;
         titleText.setText(event.getTitle());
         descriptionText.setText(event.getDescription());
@@ -97,10 +98,16 @@ public class EventDetailsCont implements Initializable {
         eventDetailsImage.setImage(event.getImage());
     }
 
-    // confirm booking and sending ticket through email methods
+    // confirm booking and sending ticket
     public void openConfirmation(ActionEvent event){
-        coverScreen.setVisible(true);
-        confirmAnchor.setVisible(true);
+        if (currEvent.getCapacity() > 0){
+            coverScreen.setVisible(true);
+            confirmAnchor.setVisible(true);
+        }else{
+            ticketsText.setText("No Tickets Available");
+            ticketsText.setStyle("-fx-background-color: Red");
+        }
+
 
     }
 

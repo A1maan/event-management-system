@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="424.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.MyEventsController">
+   <children>
+      <VBox layoutY="70.0" prefHeight="354.0" prefWidth="600.0" style="-fx-background-color: &quot;white&quot;;">
+         <children>
+            <ScrollPane prefHeight="362.0" prefWidth="585.0" style="-fx-background-color: &quot;white&quot;; -fx-border-color: &quot;white&quot;;">
+               <content>
+                  <VBox fx:id="eventLayout" prefHeight="351.0" prefWidth="581.0" style="-fx-background-color: &quot;white&quot;;" />
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93b079" height="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
+      <Text fontSmoothingType="LCD" layoutX="-3.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EventADOR" textAlignment="CENTER" wrappingWidth="165.47003173828125">
+         <fill>
+            <LinearGradient endX="1.0">
+               <stops>
+                  <Stop color="#618741" />
+                  <Stop color="#618741" offset="0.007662835249042145" />
+                  <Stop color="#4f4f4f" offset="0.7136574896973048" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <font>
+            <Font name="Bookshelf Symbol 7" size="22.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="32.0" fitWidth="49.0" layoutX="58.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@project-images/icsProjLogo.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="userPage" alignment="CENTER" contentDisplay="CENTER" layoutX="188.0" layoutY="6.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: &quot;transparent&quot;;" text="Home" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="DecoType Naskh" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="myEvents" alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="6.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="107.0" style="-fx-background-color: &quot;transparent&quot;;" text="My Events" textAlignment="CENTER">
+         <font>
+            <Font name="DecoType Naskh" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="adminPage" alignment="CENTER" contentDisplay="CENTER" layoutX="349.0" layoutY="6.0" mnemonicParsing="false" onAction="#switchToAdminScene" prefHeight="56.0" prefWidth="75.0" style="-fx-background-color: &quot;transparent&quot;;" text="Admin" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="DecoType Naskh" size="16.0" />
+         </font>
+      </Button>
+      <AnchorPane fx:id="confirmAnchor" layoutX="159.0" layoutY="134.0" prefHeight="200.0" prefWidth="290.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" stroke="BLACK" strokeType="INSIDE" width="290.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#94b079ad" height="30.0" stroke="BLACK" strokeType="INSIDE" width="290.0" />
+            <Label layoutX="11.0" layoutY="2.0" text="Ticket View">
+               <font>
+                  <Font name="Dubai Medium" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="errorMessage" alignment="CENTER" layoutX="95.0" layoutY="152.0" prefHeight="17.0" prefWidth="89.0" text="Wrong Input" textFill="RED" textOverrun="CENTER_WORD_ELLIPSIS" visible="false" />
+            <ImageView fitHeight="150.0" fitWidth="197.0" layoutX="7.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" scaleX="1.9" scaleY="1.8" translateX="62.0" translateY="-15.0">
+               <image>
+                  <Image url="@project-images/ticket.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="ticketEvent" alignment="CENTER" layoutX="-14.0" layoutY="104.0" prefHeight="17.0" prefWidth="112.0" rotate="-90.0" text="Event" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="cancelBooking" fitHeight="28.0" fitWidth="25.0" layoutX="263.0" layoutY="2.0" onMouseClicked="#cancelConfirmation" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@project-images/cancel.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="ticketName" alignment="CENTER" layoutX="102.0" layoutY="133.0" prefHeight="17.0" prefWidth="133.0" text="Name">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
