@@ -1,0 +1,296 @@
+Index: src/main/java/org/example/ics108project/EventCardController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.ics108project;\r\n\r\nimport javafx.collections.FXCollections;\r\nimport javafx.collections.ObservableList;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.fxml.Initializable;\r\nimport javafx.scene.Node;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.SnapshotParameters;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.effect.DropShadow;\r\nimport javafx.scene.image.Image;\r\nimport javafx.scene.image.ImageView;\r\nimport javafx.scene.image.WritableImage;\r\nimport javafx.scene.paint.Color;\r\nimport javafx.scene.shape.Rectangle;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.FileInputStream;\r\nimport java.io.FileNotFoundException;\r\nimport java.io.IOException;\r\nimport java.io.InputStream;\r\nimport java.net.URL;\r\nimport java.util.ResourceBundle;\r\n\r\npublic class EventCardController implements Initializable {\r\n    ObservableList<Event> events = FXCollections.observableArrayList();\r\n    private Stage stage;\r\n    private Scene scene;\r\n    private Parent root;\r\n\r\n    @FXML\r\n    ImageView eventImage;\r\n    @FXML\r\n    Label eventDate;\r\n    @FXML\r\n    Label eventTickets;\r\n    @FXML\r\n    Label eventTitle;\r\n\r\n    @Override\r\n    public void initialize(URL url, ResourceBundle rb){\r\n    }\r\n\r\n    public void setData(Event event){\r\n        events.add(event);\r\n        InputStream stream = null;\r\n        try {\r\n            stream = new FileInputStream(\"/Users/almaan/Library/CloudStorage/OneDrive-KFUPM/Class Notes/Term-232/ICS108/ICS108-Project/src/main/resources/org/example/ics108project/project-images/defualtImage.jpg\");\r\n        } catch (FileNotFoundException e) {\r\n            throw new RuntimeException(e);\r\n        }\r\n\r\n        Image image = new Image(stream);\r\n        eventImage.setImage(image);\r\n        eventTitle.setText(event.getTitle());\r\n        eventDate.setText(event.getDate().toString());\r\n        eventTickets.setText(event.getCapacity().toString());\r\n\r\n    }\r\n\r\n    public void switchToEventDetailsScene(ActionEvent event) throws IOException {\r\n        FXMLLoader loader = new FXMLLoader(getClass().getResource(\"EventDetails.fxml\"));\r\n\r\n        // the next code block to pass the chosen event to eventDetails\r\n        root = loader.load();\r\n        EventDetailsCont eventDetailsCont = loader.getController();\r\n        for (Event ev: events){\r\n            if (ev.getTitle().equals(eventTitle.getText())){\r\n                eventDetailsCont.displayData(ev);\r\n                break;\r\n            }\r\n        }\r\n        eventDetailsCont.saveData(events);\r\n\r\n        //\r\n        stage = (Stage)((Node) event.getSource()).getScene().getWindow();\r\n        scene = new Scene(root);\r\n        stage.setScene(scene);\r\n        stage.show();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/ics108project/EventCardController.java b/src/main/java/org/example/ics108project/EventCardController.java
+--- a/src/main/java/org/example/ics108project/EventCardController.java	
++++ b/src/main/java/org/example/ics108project/EventCardController.java	
+@@ -24,10 +24,11 @@
+ import java.io.IOException;
+ import java.io.InputStream;
+ import java.net.URL;
++import java.time.format.DateTimeFormatter;
+ import java.util.ResourceBundle;
+ 
+ public class EventCardController implements Initializable {
+-    ObservableList<Event> events = FXCollections.observableArrayList();
++    private static ObservableList<Event> events = FXCollections.observableArrayList();
+     private Stage stage;
+     private Scene scene;
+     private Parent root;
+@@ -49,7 +50,7 @@
+         events.add(event);
+         InputStream stream = null;
+         try {
+-            stream = new FileInputStream("/Users/almaan/Library/CloudStorage/OneDrive-KFUPM/Class Notes/Term-232/ICS108/ICS108-Project/src/main/resources/org/example/ics108project/project-images/defualtImage.jpg");
++            stream = new FileInputStream("C:\\Users\\Dr.Rehab Gwada\\OneDrive\\Desktop\\java project\\EventManagementSystem\\src\\main\\resources\\org\\example\\ics108project\\project-images\\defualtImage.jpg");
+         } catch (FileNotFoundException e) {
+             throw new RuntimeException(e);
+         }
+@@ -57,7 +58,8 @@
+         Image image = new Image(stream);
+         eventImage.setImage(image);
+         eventTitle.setText(event.getTitle());
+-        eventDate.setText(event.getDate().toString());
++        String formattedDate = event.getDate().format(DateTimeFormatter.ofPattern("MMM-dd-yyyy"));
++        eventDate.setText(formattedDate);
+         eventTickets.setText(event.getCapacity().toString());
+ 
+     }
+@@ -65,21 +67,21 @@
+     public void switchToEventDetailsScene(ActionEvent event) throws IOException {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("EventDetails.fxml"));
+ 
+-        // the next code block to pass the chosen event to eventDetails
+         root = loader.load();
+         EventDetailsCont eventDetailsCont = loader.getController();
++        eventDetailsCont.saveData(events);
+         for (Event ev: events){
+             if (ev.getTitle().equals(eventTitle.getText())){
+                 eventDetailsCont.displayData(ev);
+                 break;
+             }
+         }
+-        eventDetailsCont.saveData(events);
+-
+         //
+         stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+         scene = new Scene(root);
+         stage.setScene(scene);
+         stage.show();
+     }
++
++
+ }
+Index: src/main/java/org/example/ics108project/EventDetailsCont.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.ics108project;\r\n\r\nimport javafx.beans.property.ObjectProperty;\r\nimport javafx.collections.FXCollections;\r\nimport javafx.collections.ObservableList;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.event.EventHandler;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.fxml.Initializable;\r\nimport javafx.scene.Node;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.TextField;\r\nimport javafx.scene.image.ImageView;\r\nimport javafx.scene.input.MouseEvent;\r\nimport javafx.scene.layout.AnchorPane;\r\nimport javafx.scene.shape.Rectangle;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.IOException;\r\nimport java.net.URL;\r\nimport java.time.format.DateTimeFormatter;\r\nimport java.util.ResourceBundle;\r\n\r\npublic class EventDetailsCont implements Initializable {\r\n\r\n    ObservableList<Event> events = FXCollections.observableArrayList();\r\n    Event currEvent;\r\n    boolean alrdyConfirmed = true;\r\n\r\n    private Stage stage;\r\n    private Scene scene;\r\n    private Parent root;\r\n\r\n    @FXML\r\n    Label titleText;\r\n    @FXML\r\n    Label descriptionText;\r\n    @FXML\r\n    Label dateText;\r\n    @FXML\r\n    Label timeText;\r\n    @FXML\r\n    Label locationText;\r\n    @FXML\r\n    Label categoryText;\r\n    @FXML\r\n    Label ticketsText;\r\n    @FXML\r\n    Button bookingButton;\r\n    @FXML\r\n    AnchorPane confirmAnchor;\r\n    @FXML\r\n    Rectangle coverScreen;\r\n    @FXML\r\n    ImageView cancelBooking;\r\n    @FXML\r\n    Button confirmBooking;\r\n    @FXML\r\n    TextField fullName;\r\n    @FXML\r\n    TextField email;\r\n    @FXML\r\n    Label errorMessage;\r\n    @FXML\r\n    ImageView ticket;\r\n    @FXML\r\n    Label ticketName;\r\n    @FXML\r\n    Label ticketEvent;\r\n    @FXML\r\n    Label l1;\r\n    @FXML\r\n    Label l2;\r\n\r\n    public void saveData(ObservableList<Event> passedEvents){\r\n        events.addAll(passedEvents);\r\n    }\r\n\r\n    public void displayData(Event event){\r\n        currEvent = event;\r\n        titleText.setText(event.getTitle());\r\n        descriptionText.setText(event.getDescription());\r\n\r\n        String formattedDate = event.getDate().format(DateTimeFormatter.ofPattern(\"MMM-dd-yyyy\"));\r\n        dateText.setText(formattedDate);\r\n\r\n        timeText.setText(event.getTime());\r\n        locationText.setText(event.getLocation());\r\n        ticketsText.setText(\"Tickets Left: \" + event.getCapacity());\r\n        categoryText.setText(event.getCategory());\r\n    }\r\n\r\n    // confirm booking and sending ticket through email methods\r\n    public void openConfirmation(ActionEvent event){\r\n        coverScreen.setVisible(true);\r\n        confirmAnchor.setVisible(true);\r\n\r\n    }\r\n\r\n    public void cancelConfirmation() throws IOException{\r\n        coverScreen.setVisible(false);\r\n        confirmAnchor.setVisible(false);\r\n    }\r\n\r\n    public void sendTicket() throws IOException{\r\n        String userName = fullName.getText();\r\n        String userEmail = email.getText();\r\n\r\n        if (userName.isEmpty() || userEmail.isEmpty() || !userEmail.contains(\"@gmail.com\")){\r\n            fullName.setText(\"\");\r\n            email.setText(\"\");\r\n            errorMessage.setVisible(true);\r\n\r\n        }else{\r\n            errorMessage.setVisible(false);\r\n            fullName.setVisible(false);\r\n            email.setVisible(false);\r\n            confirmBooking.setVisible(false);\r\n            l1.setVisible(false);\r\n            l2.setVisible(false);\r\n\r\n            ticketName.setText(userName);\r\n            ticketEvent.setText(currEvent.getTitle());\r\n            ticket.setVisible(true);\r\n            ticketEvent.setVisible(true);\r\n            ticketName.setVisible(true);\r\n\r\n\r\n\r\n            for (int i = 0; i < events.size(); i++){\r\n                if (events.get(i) == currEvent){\r\n                    events.get(i).setCapacity(events.get(i).getCapacity() - 1);\r\n                    ticketsText.setText(\"Tickets Left: \" + events.get(i).getCapacity());\r\n                }\r\n            }\r\n        }\r\n\r\n    }\r\n\r\n    // switching scenes methods\r\n    public void switchToAdminScene(ActionEvent event) throws IOException {\r\n        FXMLLoader loader = new FXMLLoader(getClass().getResource(\"Admin.fxml\"));\r\n\r\n        root = loader.load();\r\n        stage = (Stage)((Node) event.getSource()).getScene().getWindow();\r\n        scene = new Scene(root);\r\n        stage.setScene(scene);\r\n        stage.show();\r\n\r\n    }\r\n\r\n    public void switchToUserScene(ActionEvent event) throws IOException {\r\n\r\n        FXMLLoader loader = new FXMLLoader(getClass().getResource(\"User.fxml\"));\r\n\r\n        // the next code block to pass the chosen event to eventDetails\r\n        root = loader.load();\r\n        UserController userController = loader.getController();\r\n        userController.displayData(events);\r\n        //\r\n        stage = (Stage)((Node) event.getSource()).getScene().getWindow();\r\n        scene = new Scene(root);\r\n        stage.setScene(scene);\r\n        stage.show();\r\n\r\n    }\r\n    @Override\r\n    public void initialize(URL url, ResourceBundle resourceBundle) {\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/ics108project/EventDetailsCont.java b/src/main/java/org/example/ics108project/EventDetailsCont.java
+--- a/src/main/java/org/example/ics108project/EventDetailsCont.java	
++++ b/src/main/java/org/example/ics108project/EventDetailsCont.java	
+@@ -8,6 +8,7 @@
+ import javafx.fxml.FXML;
+ import javafx.fxml.FXMLLoader;
+ import javafx.fxml.Initializable;
++import javafx.geometry.Rectangle2D;
+ import javafx.scene.Node;
+ import javafx.scene.Parent;
+ import javafx.scene.Scene;
+@@ -94,10 +95,16 @@
+         categoryText.setText(event.getCategory());
+     }
+ 
+-    // confirm booking and sending ticket through email methods
++    // confirm booking and sending ticket
+     public void openConfirmation(ActionEvent event){
+-        coverScreen.setVisible(true);
+-        confirmAnchor.setVisible(true);
++        if (currEvent.getCapacity() > 0){
++            coverScreen.setVisible(true);
++            confirmAnchor.setVisible(true);
++        }else{
++            ticketsText.setText("No Tickets Available");
++            ticketsText.setStyle("-fx-background-color: Red");
++        }
++
+ 
+     }
+ 
+Index: src/main/java/org/example/ics108project/UserController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.ics108project;\r\nimport javafx.collections.FXCollections;\r\nimport javafx.collections.ObservableList;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.fxml.Initializable;\r\nimport javafx.scene.Node;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.CheckBox;\r\nimport javafx.scene.control.DatePicker;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.TextField;\r\nimport javafx.scene.image.ImageView;\r\nimport javafx.scene.layout.HBox;\r\nimport javafx.scene.layout.VBox;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.IOException;\r\nimport java.net.URL;\r\nimport java.time.LocalDate;\r\nimport java.time.format.DateTimeFormatter;\r\nimport java.util.ArrayList;\r\nimport java.util.HashMap;\r\nimport java.util.ResourceBundle;\r\n\r\npublic class UserController implements Initializable  {\r\n\r\n    ObservableList<Event> events = FXCollections.observableArrayList();\r\n    ObservableList<Event> filterEvents = FXCollections.observableArrayList();\r\n\r\n    private Stage stage;\r\n    private Scene scene;\r\n    private Parent root;\r\n\r\n    @FXML\r\n    VBox eventLayout;\r\n    @FXML\r\n    TextField searchInput;\r\n    @FXML\r\n    ImageView errorFilter;\r\n    @FXML\r\n    DatePicker datePicker;\r\n    @FXML\r\n    Label dateLabel;\r\n    @FXML\r\n    CheckBox busTag;\r\n    @FXML\r\n    CheckBox eduTag;\r\n    @FXML\r\n    CheckBox entTag;\r\n    @FXML\r\n    CheckBox fashTag;\r\n    @FXML\r\n    CheckBox fesTag;\r\n    @FXML\r\n    CheckBox sprTag;\r\n    @FXML\r\n    CheckBox techTag;\r\n    @FXML\r\n    CheckBox foodTag;\r\n    public void displayData(ObservableList<Event> event){\r\n        events.addAll(event);\r\n        try {\r\n            for (Event value : events) {\r\n                FXMLLoader fxmLoader = new FXMLLoader();\r\n                fxmLoader.setLocation(getClass().getResource(\"EventCard.fxml\"));\r\n                VBox eventBox = fxmLoader.load();\r\n                EventCardController eventCardController = fxmLoader.getController();\r\n                eventCardController.setData(value);\r\n                eventLayout.getChildren().add(eventBox);\r\n            }\r\n        } catch (IOException e) {\r\n            throw new RuntimeException(e);\r\n        }\r\n    }\r\n\r\n    public void applyFilter(){\r\n        while(!eventLayout.getChildren().isEmpty()){\r\n            eventLayout.getChildren().removeFirst();\r\n        }\r\n\r\n        try {\r\n            for (Event value : filterEvents) {\r\n                FXMLLoader fxmLoader = new FXMLLoader();\r\n                fxmLoader.setLocation(getClass().getResource(\"EventCard.fxml\"));\r\n                VBox eventBox = fxmLoader.load();\r\n                EventCardController eventCardController = fxmLoader.getController();\r\n                eventCardController.setData(value);\r\n                eventLayout.getChildren().add(eventBox);\r\n            }\r\n        } catch (IOException e) {\r\n            throw new RuntimeException(e);\r\n        }\r\n\r\n\r\n        errorFilter.setVisible(eventLayout.getChildren().isEmpty());\r\n        while(!filterEvents.isEmpty()){\r\n            filterEvents.removeFirst();\r\n        }\r\n        System.out.println(filterEvents);\r\n    }\r\n\r\n    public void searchFilter() throws IOException {\r\n\r\n        String sInput = searchInput.getText();\r\n        sInput = sInput.toLowerCase();\r\n        if (!sInput.isEmpty()){\r\n            for (Event event : events) {\r\n                if (event.getTitle().toLowerCase().equals(sInput) && !filterEvents.contains(event)) {\r\n                    filterEvents.add(event);\r\n                }\r\n            }\r\n        }\r\n        applyFilter();\r\n    }\r\n\r\n    public void dateFilter(){\r\n\r\n        LocalDate chosenDate = datePicker.getValue();\r\n        String formattedDate = chosenDate.format(DateTimeFormatter.ofPattern(\"MMM-dd-yyyy\"));\r\n        dateLabel.setText(formattedDate);\r\n\r\n        for (Event event : events) {\r\n            if (!event.getDate().toString().equals(chosenDate.toString()) && !filterEvents.contains(event)) {\r\n                filterEvents.add(event);\r\n            }\r\n        }\r\n        applyFilter();\r\n    }\r\n\r\n    public void tagFilter(){\r\n        HashMap<String, Boolean> tags = new HashMap<String, Boolean>();\r\n        tags.put(busTag.getText(), busTag.isSelected());\r\n        tags.put(eduTag.getText(), eduTag.isSelected());\r\n        tags.put(entTag.getText(), entTag.isSelected());\r\n        tags.put(fashTag.getText(), fashTag.isSelected());\r\n        tags.put(fesTag.getText(), fesTag.isSelected());\r\n        tags.put(foodTag.getText(), foodTag.isSelected());\r\n        tags.put(sprTag.getText(), sprTag.isSelected());\r\n        tags.put(techTag.getText(), techTag.isSelected());\r\n\r\n        for(String key: tags.keySet()){\r\n            if (tags.get(key)){\r\n                for (Event event: events){\r\n                    if (event.getCategory().equals(key)){\r\n                        filterEvents.add(event);\r\n                    }\r\n                }\r\n            } else{\r\n                for (Event event: filterEvents){\r\n                    if (event.getCategory().equals(key)){\r\n                        filterEvents.remove(event);\r\n                    }\r\n                }\r\n            }\r\n        }\r\n        applyFilter();\r\n\r\n    }\r\n\r\n    public void resetFilters(){\r\n        try {\r\n            while(!eventLayout.getChildren().isEmpty()){\r\n                eventLayout.getChildren().removeFirst();\r\n            }\r\n\r\n            errorFilter.setVisible(false);\r\n            searchInput.setText(\"\");\r\n            dateLabel.setText(\"Date Filter\");\r\n            busTag.setSelected(true);\r\n            entTag.setSelected(true);\r\n            eduTag.setSelected(true);\r\n            fashTag.setSelected(true);\r\n            fesTag.setSelected(true);\r\n            foodTag.setSelected(true);\r\n            sprTag.setSelected(true);\r\n            techTag.setSelected(true);\r\n\r\n            for (Event value: events) {\r\n                FXMLLoader fxmLoader = new FXMLLoader();\r\n                fxmLoader.setLocation(getClass().getResource(\"EventCard.fxml\"));\r\n                VBox eventBox = fxmLoader.load();\r\n                EventCardController eventCardController = fxmLoader.getController();\r\n                eventCardController.setData(value);\r\n                eventLayout.getChildren().add(eventBox);\r\n            }\r\n        } catch (IOException e) {\r\n            throw new RuntimeException(e);\r\n        }\r\n    }\r\n\r\n    public void switchToAdminScene(ActionEvent event) throws IOException {\r\n        FXMLLoader loader = new FXMLLoader(getClass().getResource(\"Admin.fxml\"));\r\n\r\n        // the next code block to pass the chosen event to eventDetails\r\n        root = loader.load();\r\n        stage = (Stage)((Node) event.getSource()).getScene().getWindow();\r\n        scene = new Scene(root);\r\n        stage.setScene(scene);\r\n        stage.show();\r\n\r\n    }\r\n    @Override\r\n    public void initialize(URL url, ResourceBundle resourceBundle) {\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/ics108project/UserController.java b/src/main/java/org/example/ics108project/UserController.java
+--- a/src/main/java/org/example/ics108project/UserController.java	
++++ b/src/main/java/org/example/ics108project/UserController.java	
+@@ -8,13 +8,11 @@
+ import javafx.scene.Node;
+ import javafx.scene.Parent;
+ import javafx.scene.Scene;
+-import javafx.scene.control.CheckBox;
+-import javafx.scene.control.DatePicker;
+-import javafx.scene.control.Label;
+-import javafx.scene.control.TextField;
++import javafx.scene.control.*;
+ import javafx.scene.image.ImageView;
+ import javafx.scene.layout.HBox;
+ import javafx.scene.layout.VBox;
++import javafx.scene.paint.Color;
+ import javafx.stage.Stage;
+ 
+ import java.io.IOException;
+@@ -60,6 +58,8 @@
+     CheckBox techTag;
+     @FXML
+     CheckBox foodTag;
++
++
+     public void displayData(ObservableList<Event> event){
+         events.addAll(event);
+         try {
+@@ -123,7 +123,7 @@
+         dateLabel.setText(formattedDate);
+ 
+         for (Event event : events) {
+-            if (!event.getDate().toString().equals(chosenDate.toString()) && !filterEvents.contains(event)) {
++            if (event.getDate().toString().equals(chosenDate.toString()) && !filterEvents.contains(event)) {
+                 filterEvents.add(event);
+             }
+         }
+@@ -201,9 +201,19 @@
+         stage.setScene(scene);
+         stage.show();
+ 
++    }
++
++    public ObservableList<Event>  sendData(){
++        return events;
+     }
+     @Override
+     public void initialize(URL url, ResourceBundle resourceBundle) {
+-
++        datePicker.setDayCellFactory(param -> new DateCell() {
++            @Override
++            public void updateItem(LocalDate date, boolean empty) {
++                super.updateItem(date, empty);
++                setDisable(empty || date.compareTo(LocalDate.now()) < 0 );
++            }
++        });
+     }
+ }
+Index: src/main/java/org/example/ics108project/MyEventsController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/ics108project/MyEventsController.java b/src/main/java/org/example/ics108project/MyEventsController.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/org/example/ics108project/MyEventsController.java	
+@@ -0,0 +1,4 @@
++package org.example.ics108project;
++
++public class MyEventsController {
++}
+Index: src/main/resources/org/example/ics108project/MyEvents.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/org/example/ics108project/MyEvents.fxml b/src/main/resources/org/example/ics108project/MyEvents.fxml
+new file mode 100644
+--- /dev/null	
++++ b/src/main/resources/org/example/ics108project/MyEvents.fxml	
+@@ -0,0 +1,102 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import javafx.scene.control.Button?>
++<?import javafx.scene.control.Label?>
++<?import javafx.scene.control.ScrollPane?>
++<?import javafx.scene.control.TextField?>
++<?import javafx.scene.image.Image?>
++<?import javafx.scene.image.ImageView?>
++<?import javafx.scene.layout.AnchorPane?>
++<?import javafx.scene.layout.VBox?>
++<?import javafx.scene.paint.LinearGradient?>
++<?import javafx.scene.paint.Stop?>
++<?import javafx.scene.shape.Rectangle?>
++<?import javafx.scene.text.Font?>
++<?import javafx.scene.text.Text?>
++
++
++<AnchorPane prefHeight="424.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.MyEventsController">
++   <children>
++      <VBox layoutY="70.0" prefHeight="354.0" prefWidth="600.0" style="-fx-background-color: &quot;white&quot;;">
++         <children>
++            <ScrollPane prefHeight="362.0" prefWidth="585.0" style="-fx-background-color: &quot;white&quot;; -fx-border-color: &quot;white&quot;;">
++               <content>
++                  <VBox fx:id="eventLayout" prefHeight="351.0" prefWidth="581.0" style="-fx-background-color: &quot;white&quot;;" />
++               </content>
++            </ScrollPane>
++         </children>
++      </VBox>
++      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93b079" height="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
++      <Text fontSmoothingType="LCD" layoutX="-3.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EventADOR" textAlignment="CENTER" wrappingWidth="165.47003173828125">
++         <fill>
++            <LinearGradient endX="1.0">
++               <stops>
++                  <Stop color="#618741" />
++                  <Stop color="#618741" offset="0.007662835249042145" />
++                  <Stop color="#4f4f4f" offset="0.7136574896973048" />
++                  <Stop color="BLACK" offset="1.0" />
++               </stops>
++            </LinearGradient>
++         </fill>
++         <font>
++            <Font name="Bookshelf Symbol 7" size="22.0" />
++         </font>
++      </Text>
++      <ImageView fitHeight="32.0" fitWidth="49.0" layoutX="58.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
++         <image>
++            <Image url="@project-images/icsProjLogo.png" />
++         </image>
++      </ImageView>
++      <Button fx:id="userPage" alignment="CENTER" contentDisplay="CENTER" layoutX="188.0" layoutY="6.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: &quot;transparent&quot;;" text="Home" textAlignment="CENTER" textFill="WHITE">
++         <font>
++            <Font name="DecoType Naskh" size="16.0" />
++         </font>
++      </Button>
++      <Button fx:id="myEvents" alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="6.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="107.0" style="-fx-background-color: &quot;transparent&quot;;" text="My Events" textAlignment="CENTER">
++         <font>
++            <Font name="DecoType Naskh" size="16.0" />
++         </font>
++      </Button>
++      <Button fx:id="adminPage" alignment="CENTER" contentDisplay="CENTER" layoutX="349.0" layoutY="6.0" mnemonicParsing="false" onAction="#switchToAdminScene" prefHeight="56.0" prefWidth="75.0" style="-fx-background-color: &quot;transparent&quot;;" text="Admin" textAlignment="CENTER" textFill="WHITE">
++         <font>
++            <Font name="DecoType Naskh" size="16.0" />
++         </font>
++      </Button>
++      <AnchorPane fx:id="confirmAnchor" layoutX="159.0" layoutY="134.0" prefHeight="200.0" prefWidth="290.0">
++         <children>
++            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" stroke="BLACK" strokeType="INSIDE" width="290.0" />
++            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#94b079ad" height="30.0" stroke="BLACK" strokeType="INSIDE" width="290.0" />
++            <Label layoutX="11.0" layoutY="2.0" text="Ticket View">
++               <font>
++                  <Font name="Dubai Medium" size="15.0" />
++               </font>
++            </Label>
++            <ImageView fx:id="cancelBooking" fitHeight="28.0" fitWidth="25.0" layoutX="263.0" layoutY="2.0" onMouseClicked="#cancelConfirmation" pickOnBounds="true" preserveRatio="true">
++               <image>
++                  <Image url="@project-images/cancel.png" />
++               </image>
++            </ImageView>
++            <Label layoutX="13.0" layoutY="92.0" prefHeight="17.0" prefWidth="62.0" text="Full Name:" textOverrun="CENTER_WORD_ELLIPSIS" />
++            <Label layoutX="13.0" layoutY="131.0" prefHeight="17.0" prefWidth="89.0" text="Email Address:" textOverrun="CENTER_WORD_ELLIPSIS" />
++            <TextField fx:id="fullName" layoutX="75.0" layoutY="88.0" prefHeight="25.0" prefWidth="205.0" promptText="Moaz Ahmed" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #D2E4C7; -fx-background-color: &quot;white&quot;;" />
++            <TextField fx:id="email" layoutX="93.0" layoutY="127.0" prefHeight="25.0" prefWidth="187.0" promptText="mtsat2005@gmail.com" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #D2E4C7; -fx-background-color: &quot;white&quot;;" />
++            <Button fx:id="confirmBooking" alignment="CENTER" contentDisplay="TOP" layoutX="107.0" layoutY="169.0" mnemonicParsing="false" onAction="#sendTicket" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #618741; -fx-background-radius: 10; -fx-border-radius: 10;" text="Confirm" textFill="#fbf9f9">
++               <font>
++                  <Font name="Berlin Sans FB" size="12.0" />
++               </font>
++            </Button>
++            <Label fx:id="errorMessage" alignment="CENTER" layoutX="95.0" layoutY="152.0" prefHeight="17.0" prefWidth="89.0" text="Wrong Input" textFill="RED" textOverrun="CENTER_WORD_ELLIPSIS" visible="false" />
++            <Label fx:id="ticketName" alignment="CENTER" layoutX="103.0" layoutY="136.0" prefHeight="17.0" prefWidth="112.0" text="Name" visible="false">
++               <font>
++                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
++               </font>
++            </Label>
++            <Label fx:id="ticketEvent" alignment="CENTER" layoutX="-8.0" layoutY="113.0" prefHeight="17.0" prefWidth="112.0" rotate="-90.0" text="Event" textFill="WHITE">
++               <font>
++                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
++               </font>
++            </Label>
++         </children>
++      </AnchorPane>
++   </children>
++</AnchorPane>
