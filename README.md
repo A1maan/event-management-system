@@ -1,4 +1,3 @@
-
 # Event Management System
 ## Table of Contents
 - [Description](#description)

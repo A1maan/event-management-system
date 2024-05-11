@@ -27,7 +27,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class EventCardController implements Initializable {
-    ObservableList<Event> events = FXCollections.observableArrayList();
+    private static ObservableList<Event> events = FXCollections.observableArrayList();
     private Stage stage;
     private Scene scene;
     private Parent root;

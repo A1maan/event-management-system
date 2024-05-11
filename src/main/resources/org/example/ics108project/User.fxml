@@ -109,21 +109,16 @@
             <Image url="@project-images/noEventsFound.png" />
          </image>
       </ImageView>
-      <Button fx:id="homePage" layoutX="421.0" layoutY="17.0" mnemonicParsing="false" style="-fx-background-color: &quot;transparent&quot;;" text="Home">
+      <Button fx:id="homePage" layoutX="233.0" layoutY="18.0" mnemonicParsing="false" style="-fx-background-color: &quot;transparent&quot;;" text="Home">
          <font>
             <Font name="Euphemia UCAS Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="userPage" layoutX="220.0" layoutY="9.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: &quot;transparent&quot;;" text="User Page">
-         <font>
-            <Font name="Euphemia UCAS Bold" size="24.0" />
-         </font>
-      </Button>
-      <Button fx:id="adminPage" layoutX="493.0" layoutY="20.0" mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-color: &quot;transparent&quot;;" text="Admin Page" textFill="WHITE">
+      <Button fx:id="adminPage" layoutX="304.0" layoutY="20.0" mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-color: &quot;transparent&quot;;" text="Admin Page" textFill="WHITE">
          <font>
             <Font name="Dubai Regular" size="16.0" />
          </font>
       </Button>
-      <Separator layoutX="488.0" layoutY="18.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="2.0" style="-fx-border-color: transparent;" />
+      <Separator layoutX="300.0" layoutY="18.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="2.0" style="-fx-border-color: transparent;" />
    </children>
 </AnchorPane>

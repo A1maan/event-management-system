@@ -83,7 +83,6 @@ public class EventDetailsCont implements Initializable {
     }
 
     public void displayData(Event event, ObservableList<Event> events){
-        saveData(events);
         currEvent = event;
         titleText.setText(event.getTitle());
         descriptionText.setText(event.getDescription());
