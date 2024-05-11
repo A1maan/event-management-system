@@ -39,7 +39,7 @@
             <Image url="@project-images/icsProjLogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="216.0" fitWidth="270.0" layoutX="14.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="eventDetailsImage" fitHeight="216.0" fitWidth="270.0" layoutX="14.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@project-images/defualtImage.jpg" />
          </image>

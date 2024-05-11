@@ -193,9 +193,9 @@ public class UserController implements Initializable  {
 
     public void switchToAdminScene(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
-
-        // the next code block to pass the chosen event to eventDetails
         root = loader.load();
+        AdminController adminController = loader.getController();
+        adminController.addEvent(events);
         stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

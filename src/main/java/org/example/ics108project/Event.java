@@ -1,5 +1,7 @@
 package org.example.ics108project;
 
+import javafx.scene.image.Image;
+
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -13,8 +15,27 @@ public class Event {
     private String time;
     private Integer capacity;
     private String location;
+    private Image image;
 
-    public Event(String title, String category, String description, LocalDate date, String time, Integer capacity, String location ){
+    private String imageNameText;
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
+
+    public String getImageNameText() {
+        return imageNameText;
+    }
+
+    public void setImageNameText(String imageNameText) {
+        this.imageNameText = imageNameText;
+    }
+
+    public Event(String title, String category, String description, LocalDate date, String time, Integer capacity, String location, Image image, String imageNameText){
         id += 1;
 
         this.title = title;
@@ -24,6 +45,8 @@ public class Event {
         this.time = time;
         this.capacity = capacity;
         this.location = location;
+        this.image = image;
+        this.imageNameText = imageNameText;
         this.eventId = id;
     }
 

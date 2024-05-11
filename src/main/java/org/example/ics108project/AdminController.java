@@ -41,7 +41,8 @@ public class AdminController implements Initializable {
     private TableColumn<Event, String> locationColumn;
     @FXML
     private TableColumn<Event, Integer> capacityColumn;
-
+    @FXML
+    private TableColumn<Event, String> imageColumn;
     ObservableList<Event> events = FXCollections.observableArrayList();
     HashMap<Integer, Event> eventHashMap = new HashMap<>();
 
@@ -69,6 +70,7 @@ public class AdminController implements Initializable {
         timeColumn.setCellValueFactory(new PropertyValueFactory<Event, String>("time"));
         capacityColumn.setCellValueFactory(new PropertyValueFactory<Event, Integer>("capacity"));
         locationColumn.setCellValueFactory(new PropertyValueFactory<Event, String>("location"));
+        imageColumn.setCellValueFactory(new PropertyValueFactory<Event, String>("imageNameText"));
     }
 
     public void switchToUserScene(ActionEvent event) throws IOException{
@@ -105,7 +107,7 @@ public class AdminController implements Initializable {
             events = tableView.getItems();
 
             if (events != null) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource(("AddEvent.fxml")));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource(("AddEvent1.fxml")));
                 root = loader.load();
 
                 AddEventController addEventController = loader.getController();
@@ -118,7 +120,7 @@ public class AdminController implements Initializable {
             }
 
             else{
-                root = FXMLLoader.load(getClass().getResource("AddEvent.fxml"));
+                root = FXMLLoader.load(getClass().getResource("AddEvent1.fxml"));
                 stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);

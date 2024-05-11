@@ -10,9 +10,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -39,6 +42,9 @@ public class AddEventController implements Initializable {
     private TextField capacityField;
     @FXML
     private TextArea locationField;
+    private Image image;
+    @FXML
+    private Label imageNameLabel;
 
     @FXML
     private Text invalidText;
@@ -49,8 +55,26 @@ public class AddEventController implements Initializable {
     public void receiveObsList(ObservableList<Event> eventList){
         currEventList = eventList;
     }
+
+    public void receiveImagePath(ActionEvent e){
+        FileChooser fileChooser = new FileChooser();
+        FileChooser.ExtensionFilter imageFilter =
+                new FileChooser.ExtensionFilter("Image Files (*.jpg, *.png, *.gif)", "*.jpg", "*.png", "*.gif");
+        fileChooser.getExtensionFilters().add(imageFilter);
+
+        File selectedFile = fileChooser.showOpenDialog(stage);
+        if (selectedFile != null) {
+            try {
+                String fileName = selectedFile.getName();
+                imageNameLabel.setText(fileName);
+                image = new Image(selectedFile.toURI().toString());
+            } catch (Exception exception) {
+                image = new Image("/Users/almaan/Library/CloudStorage/OneDrive-KFUPM/Class Notes/Term-232/ICS108/ICS108-Project/src/main/resources/org/example/ics108project/project-images/defualtImage.jpg");
+            }
+        }
+    }
     public Event createEvent(ActionEvent e){
-        return new Event(titleField.getText(), categoryField.getValue(), descriptionField.getText(), dateField.getValue(), timeField.getText(), Integer.parseInt(capacityField.getText()), locationField.getText());
+        return new Event(titleField.getText(), categoryField.getValue(), descriptionField.getText(), dateField.getValue(), timeField.getText(), Integer.parseInt(capacityField.getText()), locationField.getText(), image, imageNameLabel.getText());
     }
 
     @Override

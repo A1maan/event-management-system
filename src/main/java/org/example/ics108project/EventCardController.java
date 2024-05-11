@@ -55,7 +55,7 @@ public class EventCardController implements Initializable {
         }
 
         Image image = new Image(stream);
-        eventImage.setImage(image);
+        eventImage.setImage(event.getImage());
         eventTitle.setText(event.getTitle());
         eventDate.setText(event.getDate().toString());
         eventTickets.setText(event.getCapacity().toString());
@@ -70,7 +70,7 @@ public class EventCardController implements Initializable {
         EventDetailsCont eventDetailsCont = loader.getController();
         for (Event ev: events){
             if (ev.getTitle().equals(eventTitle.getText())){
-                eventDetailsCont.displayData(ev);
+                eventDetailsCont.displayData(ev, events);
                 break;
             }
         }

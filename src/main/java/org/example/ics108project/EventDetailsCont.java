@@ -75,12 +75,15 @@ public class EventDetailsCont implements Initializable {
     Label l1;
     @FXML
     Label l2;
+    @FXML
+    ImageView eventDetailsImage;
 
     public void saveData(ObservableList<Event> passedEvents){
         events.addAll(passedEvents);
     }
 
-    public void displayData(Event event){
+    public void displayData(Event event, ObservableList<Event> events){
+        saveData(events);
         currEvent = event;
         titleText.setText(event.getTitle());
         descriptionText.setText(event.getDescription());
@@ -92,6 +95,7 @@ public class EventDetailsCont implements Initializable {
         locationText.setText(event.getLocation());
         ticketsText.setText("Tickets Left: " + event.getCapacity());
         categoryText.setText(event.getCategory());
+        eventDetailsImage.setImage(event.getImage());
     }
 
     // confirm booking and sending ticket through email methods
@@ -144,8 +148,9 @@ public class EventDetailsCont implements Initializable {
     // switching scenes methods
     public void switchToAdminScene(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
-
         root = loader.load();
+        AdminController adminController = loader.getController();
+        adminController.addEvent(events);
         stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -156,17 +161,13 @@ public class EventDetailsCont implements Initializable {
     public void switchToUserScene(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("User.fxml"));
-
-        // the next code block to pass the chosen event to eventDetails
         root = loader.load();
         UserController userController = loader.getController();
         userController.displayData(events);
-        //
         stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
