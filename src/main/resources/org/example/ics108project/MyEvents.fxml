@@ -9,18 +9,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="424.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.MyEventsController">
+<AnchorPane prefHeight="424.0" prefWidth="594.0" style="-fx-background-color: &quot;white&quot;;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.MyEventsController">
    <children>
-      <VBox layoutY="70.0" prefHeight="354.0" prefWidth="600.0" style="-fx-background-color: &quot;white&quot;;">
+      <VBox layoutX="53.0" layoutY="99.0" prefHeight="325.0" prefWidth="547.0" style="-fx-background-color: &quot;white&quot;; -fx-border-color: &quot;white&quot;;">
          <children>
-            <ScrollPane prefHeight="362.0" prefWidth="585.0" style="-fx-background-color: &quot;white&quot;; -fx-border-color: &quot;white&quot;;">
+            <ScrollPane prefHeight="354.0" prefWidth="549.0" style="-fx-border-color: &quot;white&quot;;">
                <content>
-                  <VBox fx:id="eventLayout" prefHeight="351.0" prefWidth="581.0" style="-fx-background-color: &quot;white&quot;;" />
+                  <VBox fx:id="eventLayout" prefHeight="322.0" prefWidth="522.0" style="-fx-background-color: &quot;white&quot;; -fx-border-color: &quot;white&quot;;" />
                </content>
             </ScrollPane>
          </children>
@@ -46,7 +46,7 @@
             <Image url="@project-images/icsProjLogo.png" />
          </image>
       </ImageView>
-      <Button fx:id="userPage" alignment="CENTER" contentDisplay="CENTER" layoutX="188.0" layoutY="6.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: &quot;transparent&quot;;" text="Home" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="userPage" alignment="CENTER" contentDisplay="CENTER" layoutX="188.0" layoutY="6.0" mnemonicParsing="false" onAction="#switchToUserScene" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: &quot;transparent&quot;;" text="Home" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="DecoType Naskh" size="16.0" />
          </font>
@@ -61,11 +61,29 @@
             <Font name="DecoType Naskh" size="16.0" />
          </font>
       </Button>
-      <AnchorPane fx:id="confirmAnchor" layoutX="159.0" layoutY="134.0" prefHeight="200.0" prefWidth="290.0" visible="false">
+      <ImageView fx:id="ePhoto" fitHeight="150.0" fitWidth="200.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" scaleX="1.5" scaleY="1.5" translateX="220.0" translateY="150.0" visible="false">
+         <image>
+            <Image url="@project-images/loginFirst.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="eMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="187.0" layoutY="326.0" prefHeight="17.0" prefWidth="235.0" text="Login first to view your booked events" visible="false" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="178.0">
+         <font>
+            <Font name="Dubai Medium" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="userImage" fitHeight="32.0" fitWidth="31.0" layoutX="547.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@project-images/profilePic.png" />
+         </image>
+      </ImageView>
+      <Circle fill="#1f93ff00" layoutX="562.0" layoutY="26.0" radius="24.0" stroke="#93b079" strokeType="INSIDE" strokeWidth="8.0" />
+      <Button fx:id="logginButton" alignment="CENTER" contentDisplay="CENTER" layoutX="538.0" layoutY="41.0" mnemonicParsing="false" onAction="#switchToLoginScene" style="-fx-background-color: &quot;transparent&quot;;" text="Log In" textAlignment="CENTER" underline="true" AnchorPane.bottomAnchor="358.0" AnchorPane.leftAnchor="538.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="41.0" />
+      <Rectangle fx:id="hideBox" arcHeight="5.0" arcWidth="5.0" fill="#ffffff5c" height="424.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="600.0" />
+      <AnchorPane fx:id="popup" layoutX="159.0" layoutY="134.0" prefHeight="200.0" prefWidth="290.0" style="-fx-background-color: &quot;white&quot;;" visible="false">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" stroke="BLACK" strokeType="INSIDE" width="290.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#94b079ad" height="30.0" stroke="BLACK" strokeType="INSIDE" width="290.0" />
-            <Label layoutX="11.0" layoutY="2.0" text="Ticket View">
+            <Label fx:id="ticketLabel" layoutX="11.0" layoutY="2.0" text="Ticket View">
                <font>
                   <Font name="Dubai Medium" size="15.0" />
                </font>
@@ -81,7 +99,7 @@
                   <Font name="Berlin Sans FB Demi Bold" size="12.0" />
                </font>
             </Label>
-            <ImageView fx:id="cancelBooking" fitHeight="28.0" fitWidth="25.0" layoutX="263.0" layoutY="2.0" onMouseClicked="#cancelConfirmation" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="backButton" fitHeight="28.0" fitWidth="25.0" layoutX="263.0" layoutY="2.0" onMouseClicked="#closePopup" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@project-images/cancel.png" />
                </image>
@@ -91,6 +109,7 @@
                   <Font name="Berlin Sans FB Demi Bold" size="12.0" />
                </font>
             </Label>
+            <Button fx:id="confirmCancel" mnemonicParsing="false" onAction="#cancelConfirmation" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: &quot;618741&quot;; -fx-background-radius: 15;" text="Confirm" textFill="WHITE" translateX="112.0" translateY="168.0" visible="false" />
          </children>
       </AnchorPane>
    </children>

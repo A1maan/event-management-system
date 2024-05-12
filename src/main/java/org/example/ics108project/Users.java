@@ -10,7 +10,7 @@ public class Users {
     static private String userPassword;
     static Image userImage;
 
-    static ObservableList<Event> userEvents = FXCollections.observableArrayList();
+    ObservableList<Event> userEvents = FXCollections.observableArrayList();
 
     Users(String name, String email, String password, Image image){
         userName = name;
@@ -23,6 +23,13 @@ public class Users {
         userEvents.add(events);
     }
 
+    public void removeUserEvent(Event event){
+        userEvents.removeAll(event);
+    }
+
+    public ObservableList<Event> getUserEvents(){
+        return userEvents;
+    }
     public void setUserName(String name){
         userName = name;
     }

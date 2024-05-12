@@ -86,6 +86,10 @@ public class EventDetailsCont implements Initializable {
     ImageView userImage;
     @FXML
     Button loginButton;
+    @FXML
+    ImageView confirmPhoto;
+    @FXML
+    ImageView ePhoto;
 
     public void saveData(ObservableList<Event> passedEvents){
         events.addAll(passedEvents);
@@ -115,15 +119,46 @@ public class EventDetailsCont implements Initializable {
 
     // confirm booking and sending ticket
     public void openConfirmation(ActionEvent event){
-        if (currEvent.getCapacity() > 0){
+        System.out.println(currUser);
+
+        if (currUser  == null){
             coverScreen.setVisible(true);
             confirmAnchor.setVisible(true);
-        }else{
-            ticketsText.setText("No Tickets Available");
-            ticketsText.setStyle("-fx-background-color: Red");
+            ePhoto.setVisible(true);
+            confirmPhoto.setVisible(false);
+            l1.setVisible(true);
+
+        }  else {
+            if (currUser.getUserEvents().contains(currEvent)) {
+                ticketsText.setText("You already booked this Event");
+                ticketsText.setStyle("-fx-background-color: Red");
+            } else {
+                if (currEvent.getCapacity() > 0) {
+                    coverScreen.setVisible(true);
+                    confirmAnchor.setVisible(true);
+
+                    ePhoto.setVisible(false);
+                    confirmPhoto.setVisible(true);
+                    l1.setVisible(false);
+
+                    //update user events
+
+                    currUser.setUserEvents(currEvent);
+
+                    //update tickets number
+
+                    for (int i = 0; i < events.size(); i++) {
+                        if (events.get(i) == currEvent) {
+                            events.get(i).setCapacity(events.get(i).getCapacity() - 1);
+                            ticketsText.setText("Tickets Left: " + events.get(i).getCapacity());
+                        }
+                    }
+                } else {
+                    ticketsText.setText("No Tickets Available");
+                    ticketsText.setStyle("-fx-background-color: Red");
+                }
+            }
         }
-
-
     }
 
     public void cancelConfirmation() throws IOException{
@@ -131,40 +166,6 @@ public class EventDetailsCont implements Initializable {
         confirmAnchor.setVisible(false);
     }
 
-    public void sendTicket() throws IOException{
-        String userName = fullName.getText();
-        String userEmail = email.getText();
-
-        if (userName.isEmpty() || userEmail.isEmpty() || !userEmail.contains("@gmail.com")){
-            fullName.setText("");
-            email.setText("");
-            errorMessage.setVisible(true);
-
-        }else{
-            errorMessage.setVisible(false);
-            fullName.setVisible(false);
-            email.setVisible(false);
-            confirmBooking.setVisible(false);
-            l1.setVisible(false);
-            l2.setVisible(false);
-
-            ticketName.setText(userName);
-            ticketEvent.setText(currEvent.getTitle());
-            ticket.setVisible(true);
-            ticketEvent.setVisible(true);
-            ticketName.setVisible(true);
-
-
-
-            for (int i = 0; i < events.size(); i++){
-                if (events.get(i) == currEvent){
-                    events.get(i).setCapacity(events.get(i).getCapacity() - 1);
-                    ticketsText.setText("Tickets Left: " + events.get(i).getCapacity());
-                }
-            }
-        }
-
-    }
 
     // switching scenes methods
     public void switchToAdminScene(ActionEvent event) throws IOException {
@@ -192,6 +193,33 @@ public class EventDetailsCont implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void switchToMyEventsScene(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MyEvents.fxml"));
+        root = loader.load();
+
+        MyEventsController myEventsController = loader.getController();
+        myEventsController.setData(currUser, events);
+
+        stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToLoginScene(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+        root = loader.load();
+
+        LoginController loginController = loader.getController();
+        loginController.checker(loginButton.getText(), events);
+
+        stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

@@ -49,6 +49,10 @@ public class EventCardController implements Initializable {
     public void initialize(URL url, ResourceBundle rb){
     }
 
+    public void setCurrUser(Users loggedUser){
+        currUser = loggedUser;
+    }
+
     public void setData(Event event){
         if (!events.contains(event)){
             events.add(event);

@@ -86,6 +86,7 @@ public class UserController implements Initializable  {
                 VBox eventBox = fxmLoader.load();
                 EventCardController eventCardController = fxmLoader.getController();
                 eventCardController.setData(value);
+                eventCardController.setCurrUser(currUser);
                 eventLayout.getChildren().add(eventBox);
             }
         } catch (IOException e) {
@@ -226,6 +227,19 @@ public class UserController implements Initializable  {
 
         LoginController loginController = loader.getController();
         loginController.checker(loginButton.getText(), events);
+
+        stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToMyEventsScene(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MyEvents.fxml"));
+        root = loader.load();
+
+        MyEventsController myEventsController = loader.getController();
+        myEventsController.setData(currUser, events);
 
         stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

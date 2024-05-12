@@ -3,7 +3,6 @@
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -99,7 +98,7 @@
             <Font name="Dubai Bold" size="12.0" />
          </font>
       </Button>
-      <Label fx:id="ticketsText" alignment="CENTER" layoutX="32.0" layoutY="338.0" prefHeight="22.0" prefWidth="95.0" text="Tickets Left:" textAlignment="CENTER">
+      <Label fx:id="ticketsText" alignment="CENTER" layoutX="-3.0" layoutY="337.0" prefHeight="22.0" prefWidth="165.0" text="Tickets Left:" textAlignment="CENTER">
          <font>
             <Font name="Berlin Sans FB" size="12.0" />
          </font>
@@ -119,36 +118,20 @@
                   <Image url="@project-images/cancel.png" />
                </image>
             </ImageView>
-            <Label fx:id="l1" layoutX="13.0" layoutY="40.0" prefHeight="10.0" prefWidth="265.0" text="Please enter the required information and click confirm to get your" textOverrun="CENTER_WORD_ELLIPSIS" />
-            <Label fx:id="l2" layoutX="14.0" layoutY="55.0" prefHeight="10.0" prefWidth="265.0" text="ticket." textOverrun="CENTER_WORD_ELLIPSIS" />
-            <Label layoutX="13.0" layoutY="92.0" prefHeight="17.0" prefWidth="62.0" text="Full Name:" textOverrun="CENTER_WORD_ELLIPSIS" />
-            <Label layoutX="13.0" layoutY="131.0" prefHeight="17.0" prefWidth="89.0" text="Email Address:" textOverrun="CENTER_WORD_ELLIPSIS" />
-            <TextField fx:id="fullName" layoutX="75.0" layoutY="88.0" prefHeight="25.0" prefWidth="205.0" promptText="Moaz Ahmed" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #D2E4C7; -fx-background-color: &quot;white&quot;;" />
-            <TextField fx:id="email" layoutX="93.0" layoutY="127.0" prefHeight="25.0" prefWidth="187.0" promptText="mtsat2005@gmail.com" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #D2E4C7; -fx-background-color: &quot;white&quot;;" />
-            <Button fx:id="confirmBooking" alignment="CENTER" contentDisplay="TOP" layoutX="107.0" layoutY="169.0" mnemonicParsing="false" onAction="#sendTicket" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #618741; -fx-background-radius: 10; -fx-border-radius: 10;" text="Confirm" textFill="#fbf9f9">
-               <font>
-                  <Font name="Berlin Sans FB" size="12.0" />
-               </font>
-            </Button>
-            <Label fx:id="errorMessage" alignment="CENTER" layoutX="95.0" layoutY="152.0" prefHeight="17.0" prefWidth="89.0" text="Wrong Input" textFill="RED" textOverrun="CENTER_WORD_ELLIPSIS" visible="false" />
-            <ImageView fx:id="ticket" fitHeight="150.0" fitWidth="187.0" layoutX="4.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" scaleX="1.7" scaleY="1.5" translateX="60.0" visible="false">
+            <Label fx:id="l1" alignment="CENTER" layoutX="13.0" layoutY="40.0" prefHeight="10.0" prefWidth="265.0" text="Log in first to book this event" textOverrun="CENTER_WORD_ELLIPSIS" visible="false" />
+            <ImageView fx:id="confirmPhoto" fitHeight="150.0" fitWidth="187.0" layoutX="4.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" translateX="60.0" translateY="20.0" visible="false">
                <image>
-                  <Image url="@project-images/ticket.png" />
+                  <Image url="@project-images/booked.png" />
                </image>
             </ImageView>
-            <Label fx:id="ticketName" alignment="CENTER" layoutX="103.0" layoutY="136.0" prefHeight="17.0" prefWidth="112.0" text="Name" visible="false">
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
-               </font>
-            </Label>
-            <Label fx:id="ticketEvent" alignment="CENTER" layoutX="-8.0" layoutY="113.0" prefHeight="17.0" prefWidth="112.0" rotate="-90.0" text="Event" textFill="WHITE">
-               <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
-               </font>
-            </Label>
+            <ImageView fx:id="ePhoto" fitHeight="138.0" fitWidth="150.0" layoutX="72.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@project-images/loginFirst.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <Button fx:id="myEvents" alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="4.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="107.0" style="-fx-background-color: &quot;transparent&quot;;" text="My Events" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="myEvents" alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="4.0" mnemonicParsing="false" onAction="#switchToMyEventsScene" prefHeight="56.0" prefWidth="107.0" style="-fx-background-color: &quot;transparent&quot;;" text="My Events" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="DecoType Naskh" size="16.0" />
          </font>
@@ -168,7 +151,7 @@
             <Image url="@project-images/profilePic.png" />
          </image>
       </ImageView>
-      <Button fx:id="loginButton" alignment="CENTER" contentDisplay="CENTER" layoutX="538.0" layoutY="40.0" mnemonicParsing="false" style="-fx-background-color: &quot;transparent&quot;;" text="Log In" textAlignment="CENTER" underline="true" />
-      <Circle fill="#1f93ff00" layoutX="562.0" layoutY="27.0" radius="24.0" stroke="#93b079" strokeType="INSIDE" strokeWidth="8.0" />
+      <Button fx:id="loginButton" alignment="CENTER" contentDisplay="CENTER" layoutX="537.0" layoutY="41.0" mnemonicParsing="false" onAction="#switchToLoginScene" style="-fx-background-color: &quot;transparent&quot;;" text="Log In" textAlignment="CENTER" underline="true" AnchorPane.bottomAnchor="334.0" AnchorPane.leftAnchor="537.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="41.0" />
+      <Circle fill="#1f93ff00" layoutX="562.0" layoutY="26.0" radius="24.0" stroke="#93b079" strokeType="INSIDE" strokeWidth="8.0" />
    </children>
 </AnchorPane>
