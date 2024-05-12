@@ -126,7 +126,7 @@ public class UserController implements Initializable  {
         sInput = sInput.toLowerCase();
         if (!sInput.isEmpty()){
             for (Event event : events) {
-                if (event.getTitle().toLowerCase().equals(sInput) && !filterEvents.contains(event)) {
+                if (event.getTitle().toLowerCase().contains(sInput) && !filterEvents.contains(event)) {
                     filterEvents.add(event);
                 }
             }

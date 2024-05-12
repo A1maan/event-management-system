@@ -43,8 +43,10 @@ public class BookingCardController implements Initializable {
 
 
     private ObservableList<Event> bookedEvents = FXCollections.observableArrayList();
+    private static ObservableList<Event> events = FXCollections.observableArrayList();
     private Users currUser;
     public void displayEvents(Event event){
+
         bookedEvents.add(event);
         eventImage.setImage(event.getImage());
         eventTitle.setText(event.getTitle());
@@ -68,11 +70,11 @@ public class BookingCardController implements Initializable {
         root = loader.load();
         MyEventsController myEventsController = loader.getController();
 
-        myEventsController.setData(currUser, bookedEvents);
+        myEventsController.setData(currUser, events);
 
         for (Event ev: bookedEvents){
             if (ev.getTitle().equals(eventTitle.getText())){
-                myEventsController.ticketView(ev);
+                myEventsController.ticketView(ev, currUser);
                 break;
             }
         }
@@ -89,11 +91,10 @@ public class BookingCardController implements Initializable {
         root = loader.load();
         MyEventsController myEventsController = loader.getController();
 
-        myEventsController.setData(currUser, bookedEvents);
-
+        myEventsController.setData(currUser, events);
         for (Event ev: bookedEvents){
             if (ev.getTitle().equals(eventTitle.getText())){
-                myEventsController.cancelView(ev);
+                myEventsController.cancelView(ev, currUser);
                 break;
             }
         }
@@ -105,5 +106,9 @@ public class BookingCardController implements Initializable {
     }
 
     public void switchToEventDetailsScene(ActionEvent event) {
+    }
+
+    public void saveData(ObservableList<Event> events) {
+        this.events = events;
     }
 }

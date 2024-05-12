@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="443e0dac-aad7-417f-a7cd-9a816ca4240e" name="Changes" comment="add README.md file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/BookingCardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/BookedEventsCard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/EventCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/EventCardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/EventDetailsCont.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/EventDetailsCont.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/BookingCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/BookingCardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/MyEventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/MyEventsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/EventCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/EventCard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/EventDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/EventDetails.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/Login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/MyEvents.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/MyEvents.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/User.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/ics108project/User.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +119,7 @@
       <workItem from="1715424531094" duration="57000" />
       <workItem from="1715431032775" duration="7433000" />
       <workItem from="1715494275779" duration="2894000" />
-      <workItem from="1715521814300" duration="17661000" />
+      <workItem from="1715521814300" duration="22780000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -322,7 +313,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715497170047</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="add README.md file">
+      <option name="closed" value="true" />
+      <created>1715539624908</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1715539624908</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
