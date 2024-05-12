@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="424.0" prefWidth="594.0" style="-fx-background-color: &quot;white&quot;;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.MyEventsController">
+<AnchorPane prefHeight="424.0" prefWidth="594.0" style="-fx-background-color: &quot;white&quot;;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.MyEventsController">
    <children>
       <VBox fx:id="containerBox" layoutX="53.0" layoutY="99.0" prefHeight="325.0" prefWidth="547.0" style="-fx-background-color: &quot;white&quot;; -fx-border-color: &quot;white&quot;;">
          <children>
@@ -46,17 +46,17 @@
             <Image url="@project-images/icsProjLogo.png" />
          </image>
       </ImageView>
-      <Button fx:id="userPage" alignment="CENTER" contentDisplay="CENTER" layoutX="188.0" layoutY="6.0" mnemonicParsing="false" onAction="#switchToUserScene" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: &quot;transparent&quot;;" text="Home" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="userPage" alignment="CENTER" contentDisplay="CENTER" layoutX="188.0" layoutY="17.0" mnemonicParsing="false" onAction="#switchToUserScene" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: &quot;transparent&quot;;" text="Home" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="DecoType Naskh" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="myEvents" alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="6.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="107.0" style="-fx-background-color: &quot;transparent&quot;;" text="My Events" textAlignment="CENTER">
+      <Button fx:id="myEvents" alignment="CENTER" contentDisplay="CENTER" layoutX="251.0" layoutY="5.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="107.0" style="-fx-background-color: &quot;transparent&quot;;" text="My Events" textAlignment="CENTER">
          <font>
             <Font name="DecoType Naskh" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="adminPage" alignment="CENTER" contentDisplay="CENTER" layoutX="349.0" layoutY="6.0" mnemonicParsing="false" onAction="#switchToAdminScene" prefHeight="56.0" prefWidth="75.0" style="-fx-background-color: &quot;transparent&quot;;" text="Admin" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="adminPage" alignment="CENTER" contentDisplay="CENTER" layoutX="347.0" layoutY="5.0" mnemonicParsing="false" onAction="#switchToAdminScene" prefHeight="56.0" prefWidth="75.0" style="-fx-background-color: &quot;transparent&quot;;" text="Admin" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="DecoType Naskh" size="16.0" />
          </font>
@@ -77,7 +77,7 @@
          </image>
       </ImageView>
       <Circle fill="#1f93ff00" layoutX="562.0" layoutY="26.0" radius="24.0" stroke="#93b079" strokeType="INSIDE" strokeWidth="8.0" />
-      <Button fx:id="logginButton" alignment="CENTER" contentDisplay="CENTER" layoutX="538.0" layoutY="41.0" mnemonicParsing="false" onAction="#switchToLoginScene" style="-fx-background-color: &quot;transparent&quot;;" text="Log In" textAlignment="CENTER" underline="true" AnchorPane.bottomAnchor="358.0" AnchorPane.leftAnchor="538.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="41.0" />
+      <Button fx:id="logginButton" alignment="CENTER" contentDisplay="CENTER" layoutX="534.0" layoutY="42.0" mnemonicParsing="false" onAction="#switchToLoginScene" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: &quot;transparent&quot;;" text="Log In" textAlignment="CENTER" underline="true" AnchorPane.bottomAnchor="357.0" AnchorPane.leftAnchor="534.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="42.0" />
       <Rectangle fx:id="hideBox" arcHeight="5.0" arcWidth="5.0" fill="#ffffff5c" height="424.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="600.0" />
       <AnchorPane fx:id="popup" layoutX="159.0" layoutY="134.0" prefHeight="200.0" prefWidth="290.0" style="-fx-background-color: &quot;white&quot;;" visible="false">
          <children>

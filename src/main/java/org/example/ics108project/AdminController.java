@@ -117,7 +117,7 @@ public class AdminController implements Initializable {
             events = tableView.getItems();
 
             if (events != null) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource(("AddEvent1.fxml")));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource(("AddEvent.fxml")));
                 root = loader.load();
 
                 AddEventController addEventController = loader.getController();
@@ -130,7 +130,7 @@ public class AdminController implements Initializable {
             }
 
             else{
-                root = FXMLLoader.load(getClass().getResource("AddEvent1.fxml"));
+                root = FXMLLoader.load(getClass().getResource("AddEvent.fxml"));
                 stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);

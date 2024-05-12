@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.LoginController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.LoginController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93b079" height="70.0" stroke="TRANSPARENT" strokeType="INSIDE" width="600.0" />
       <Text fontSmoothingType="LCD" layoutX="-10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EventADOR" textAlignment="CENTER" wrappingWidth="165.47003173828125">
@@ -39,17 +39,17 @@
             <Image url="@project-images/icsProjLogo.png" />
          </image>
       </ImageView>
-      <Button fx:id="homePage" layoutX="188.0" layoutY="4.0" mnemonicParsing="false" onAction="#switchToUserScene" style="-fx-background-color: &quot;transparent&quot;;" text="Home" textFill="WHITE">
+      <Button fx:id="homePage" layoutX="190.0" layoutY="19.0" mnemonicParsing="false" onAction="#switchToUserScene" style="-fx-background-color: &quot;transparent&quot;;" text="Home" textFill="WHITE">
          <font>
             <Font name="DecoType Naskh" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="myEvents" layoutX="251.0" layoutY="4.0" mnemonicParsing="false" onAction="#switchToMyEventsScene" style="-fx-background-color: &quot;transparent&quot;;" text="My Events" textFill="WHITE">
+      <Button fx:id="myEvents" layoutX="255.0" layoutY="19.0" mnemonicParsing="false" onAction="#switchToMyEventsScene" style="-fx-background-color: &quot;transparent&quot;;" text="My Events" textFill="WHITE">
          <font>
             <Font name="DecoType Naskh" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="adminPage" layoutX="349.0" layoutY="4.0" mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-color: &quot;transparent&quot;;" text="Admin" textFill="WHITE">
+      <Button fx:id="adminPage" layoutX="347.0" layoutY="19.0" mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-color: &quot;transparent&quot;;" text="Admin" textFill="WHITE">
          <font>
             <Font name="DecoType Naskh" size="16.0" />
          </font>
@@ -59,7 +59,7 @@
             <Image url="@project-images/profilePic.png" />
          </image>
       </ImageView>
-      <Button fx:id="loginButton" alignment="CENTER" contentDisplay="CENTER" layoutX="538.0" layoutY="41.0" mnemonicParsing="false" style="-fx-background-color: &quot;transparent&quot;;" text="Log In" textAlignment="CENTER" underline="true" AnchorPane.bottomAnchor="334.0" AnchorPane.leftAnchor="538.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="41.0" />
+      <Button fx:id="loginButton" alignment="CENTER" contentDisplay="CENTER" layoutX="534.0" layoutY="41.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="55.0" style="-fx-background-color: &quot;transparent&quot;;" text="Log In" textAlignment="CENTER" underline="true" AnchorPane.bottomAnchor="334.0" AnchorPane.leftAnchor="534.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="41.0" />
       <ImageView fx:id="userImage" fitHeight="124.0" fitWidth="293.0" layoutX="11.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@project-images/profilePic.png" />

@@ -39,13 +39,14 @@
          <rowConstraints>
             <RowConstraints maxHeight="27.0" minHeight="0.0" prefHeight="2.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
-            <RowConstraints fillHeight="false" maxHeight="60.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+            <RowConstraints fillHeight="false" maxHeight="60.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
-            <RowConstraints fillHeight="false" maxHeight="70.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="82.0" minHeight="0.0" prefHeight="73.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+            <RowConstraints fillHeight="false" maxHeight="107.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+            <RowConstraints fillHeight="false" maxHeight="82.0" minHeight="4.0" prefHeight="34.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="82.0" minHeight="0.0" prefHeight="60.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="82.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
@@ -69,7 +70,7 @@
                   <Insets left="5.0" />
                </GridPane.margin>
             </TextField>
-            <TextArea fx:id="locationField" prefHeight="47.0" prefWidth="313.0" style="-fx-border-width: 0.5; -fx-border-color: black; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <TextArea fx:id="locationField" prefHeight="40.0" prefWidth="313.0" style="-fx-border-width: 0.5; -fx-border-color: black; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <GridPane.margin>
                   <Insets left="5.0" />
                </GridPane.margin>
@@ -95,7 +96,7 @@
                </GridPane.margin>
             </TextField>
             <Label text="Time:" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
-            <Button mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-radius: 25; -fx-background-color: #618741;" text="Add Event" textAlignment="CENTER" textFill="WHITE" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.rowSpan="2147483647">
+            <Button mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-radius: 25; -fx-background-color: #618741;" text="Add Event" textAlignment="CENTER" textFill="WHITE" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.rowSpan="2147483647">
                <font>
                   <Font name="Euphemia UCAS Bold" size="18.0" />
                </font>
@@ -105,6 +106,27 @@
                   <Font name="System Bold" size="17.0" />
                </font>
             </Text>
+            <Label text="Image:" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+               <font>
+                  <Font name="Euphemia UCAS" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="imageButton" mnemonicParsing="false" onAction="#receiveImagePath" prefHeight="3.0" prefWidth="118.0" style="-fx-background-radius: 25; -fx-background-color: #618741;" text="Choose Image" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Euphemia UCAS" size="13.0" />
+               </font>
+            </Button>
+            <Label fx:id="imageNameLabel" maxWidth="150.0" prefHeight="18.0" prefWidth="125.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+               <font>
+                  <Font name="Euphemia UCAS" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
          </children>
       </GridPane>
       <ImageView fitHeight="57.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true" />
