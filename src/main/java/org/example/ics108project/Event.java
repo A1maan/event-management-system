@@ -16,24 +16,7 @@ public class Event {
     private Integer capacity;
     private String location;
     private Image image;
-
     private String imageNameText;
-
-    public Image getImage() {
-        return image;
-    }
-
-    public void setImage(Image image) {
-        this.image = image;
-    }
-
-    public String getImageNameText() {
-        return imageNameText;
-    }
-
-    public void setImageNameText(String imageNameText) {
-        this.imageNameText = imageNameText;
-    }
 
     public Event(String title, String category, String description, LocalDate date, String time, Integer capacity, String location, Image image, String imageNameText){
         id += 1;
@@ -116,6 +99,19 @@ public class Event {
     public void setTime(String time) {
         this.time = time;
     }
+    public Image getImage() {
+        return image;
+    }
+    public void setImage(Image image) {
+        this.image = image;
+    }
+    public String getImageNameText() {
+        return imageNameText;
+    }
+    public void setImageNameText(String imageNameText) {
+        this.imageNameText = imageNameText;
+    }
+
 
     public Integer getEventID(){
         return this.eventId;

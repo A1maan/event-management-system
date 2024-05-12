@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -60,7 +61,14 @@ public class AdminController implements Initializable {
 
     public void deleteEvent(ActionEvent event){
         int selectedID = tableView.getSelectionModel().getSelectedIndex();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Event Successfully Deleted");
+        alert.setHeaderText("Event Successfully Deleted!");
+        alert.setContentText(String.format("Event %s has been successfully deleted!", tableView.getVisibleLeafColumn(1).getCellData(tableView.getItems().get(selectedID))));
+
         tableView.getItems().remove(selectedID);
+
+        alert.showAndWait();
     }
 
     @Override

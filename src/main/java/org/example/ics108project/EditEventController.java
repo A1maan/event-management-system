@@ -108,9 +108,14 @@ public class EditEventController implements Initializable {
         }
 
         else {
-            Event edittedEvent = editEvent(oldEvent);
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Event Successfully Edited");
+            alert.setHeaderText("Event Successfully Edited!");
+            alert.setContentText(String.format("Event %s has been successfully edited!", oldEvent.getTitle()));
 
-            eventHashMap.replace(selectedEventIndex, edittedEvent);
+            Event editedEvent = editEvent(oldEvent);
+
+            eventHashMap.replace(selectedEventIndex, editedEvent);
 
             oldEvents.addAll(eventHashMap.values());
 
@@ -124,6 +129,8 @@ public class EditEventController implements Initializable {
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+
+            alert.showAndWait();
         }
     }
 }

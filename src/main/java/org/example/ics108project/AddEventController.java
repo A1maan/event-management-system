@@ -108,6 +108,12 @@ public class AddEventController implements Initializable {
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Event Successfully Created");
+            alert.setHeaderText("Event Successfully Created!");
+            alert.setContentText(String.format("Event %s has been successfully created!", newEvent.getTitle()));
+            alert.showAndWait();
         }
     }
 }
