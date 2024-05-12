@@ -22,7 +22,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="413.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.UserController">
+<AnchorPane prefHeight="413.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.UserController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93b079" height="70.0" stroke="TRANSPARENT" strokeType="INSIDE" width="600.0" />
       <AmbientLight color="CHARTREUSE" layoutX="165.0" layoutY="35.0" lightOn="true" />
@@ -109,17 +109,17 @@
             <Image url="@project-images/noEventsFound.png" />
          </image>
       </ImageView>
-      <Button fx:id="userPage" alignment="CENTER" contentDisplay="CENTER" layoutX="188.0" layoutY="17.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: &quot;transparent&quot;;" text="Home" textAlignment="CENTER">
+      <Button fx:id="userPage" alignment="CENTER" contentDisplay="CENTER" layoutX="188.0" layoutY="5.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: &quot;transparent&quot;;" text="Home" textAlignment="CENTER" AnchorPane.bottomAnchor="353.0" AnchorPane.leftAnchor="188.0" AnchorPane.rightAnchor="342.0" AnchorPane.topAnchor="5.0">
          <font>
             <Font name="DecoType Naskh" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="myEvents" alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="5.0" mnemonicParsing="false" onAction="#switchToMyEventsScene" prefHeight="56.0" prefWidth="107.0" style="-fx-background-color: &quot;transparent&quot;;" text="My Events" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="myEvents" alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="5.0" mnemonicParsing="false" onAction="#switchToMyEventsScene" prefHeight="56.0" prefWidth="107.0" style="-fx-background-color: &quot;transparent&quot;;" text="My Events" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="353.0" AnchorPane.topAnchor="5.0">
          <font>
             <Font name="DecoType Naskh" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="adminPage" alignment="CENTER" contentDisplay="CENTER" layoutX="349.0" layoutY="5.0" mnemonicParsing="false" onAction="#switchToAdminScene" prefHeight="56.0" prefWidth="75.0" style="-fx-background-color: &quot;transparent&quot;;" text="Admin" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="adminPage" alignment="CENTER" contentDisplay="CENTER" layoutX="349.0" layoutY="5.0" mnemonicParsing="false" onAction="#switchToAdminScene" prefHeight="56.0" prefWidth="75.0" style="-fx-background-color: &quot;transparent&quot;;" text="Admin" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="353.0" AnchorPane.topAnchor="5.0">
          <font>
             <Font name="DecoType Naskh" size="16.0" />
          </font>
