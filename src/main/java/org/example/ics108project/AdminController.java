@@ -25,6 +25,8 @@ public class AdminController implements Initializable {
     private Scene scene;
     private Parent root;
 
+    private Users currUser;
+
     @FXML
     private TableView tableView;
     @FXML
@@ -82,7 +84,7 @@ public class AdminController implements Initializable {
                 // the next code block to pass the created event to userController
                 root = loader.load();
                 UserController userController = loader.getController();
-                userController.displayData(events);
+                userController.displayData(events, currUser);
                 //
                 stage = (Stage)((Node) event.getSource()).getScene().getWindow();
                 scene = new Scene(root);

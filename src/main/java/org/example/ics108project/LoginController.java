@@ -4,7 +4,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -17,12 +19,14 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
     static ObservableList<Users> users = FXCollections.observableArrayList();
+    static ObservableList<Event> events = FXCollections.observableArrayList();
 
     private Stage stage;
     private Scene scene;
@@ -62,6 +66,7 @@ public class LoginController implements Initializable {
         try{
             Users newUser = new Users(userName.getText(), userEmail.getText(), userPassword.getText(), userImage.getImage());
             users.add(newUser);
+            currUser = newUser;
             userImage2.setImage(newUser.getUserImage());
             loginButton.setText(newUser.getUserName());
 
@@ -125,7 +130,8 @@ public class LoginController implements Initializable {
 
     }
 
-    public void checker(String currUserName){
+    public void checker(String currUserName,ObservableList<Event> currEventsList ){
+        events.addAll(currEventsList);
         loginButton.setText(currUserName);
         for(Users eachUser: users){
             if(eachUser.getUserName().equals(currUserName)){
@@ -143,6 +149,19 @@ public class LoginController implements Initializable {
             updateUser.setVisible(true);
             saveUser.setVisible(false);
         }
+    }
+
+    public void switchToUserScene(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("User.fxml"));
+        // the next code block to pass the created event to userController
+        root = loader.load();
+        UserController userController = loader.getController();
+        userController.displayData(events, currUser);
+        //
+        stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @Override

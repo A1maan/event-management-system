@@ -163,11 +163,12 @@
             <Font name="DecoType Naskh" size="16.0" />
          </font>
       </Button>
-      <ImageView fitHeight="32.0" fitWidth="31.0" layoutX="547.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="userImage" fitHeight="32.0" fitWidth="31.0" layoutX="547.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@project-images/profilePic.png" />
          </image>
       </ImageView>
-      <Button fx:id="loginButton" layoutX="537.0" layoutY="40.0" mnemonicParsing="false" style="-fx-background-color: &quot;transparent&quot;;" text="Log In" textAlignment="CENTER" underline="true" />
+      <Button fx:id="loginButton" alignment="CENTER" contentDisplay="CENTER" layoutX="538.0" layoutY="40.0" mnemonicParsing="false" style="-fx-background-color: &quot;transparent&quot;;" text="Log In" textAlignment="CENTER" underline="true" />
+      <Circle fill="#1f93ff00" layoutX="562.0" layoutY="27.0" radius="24.0" stroke="#93b079" strokeType="INSIDE" strokeWidth="8.0" />
    </children>
 </AnchorPane>

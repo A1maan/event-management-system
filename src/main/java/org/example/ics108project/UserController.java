@@ -34,6 +34,8 @@ public class UserController implements Initializable  {
     private Scene scene;
     private Parent root;
 
+    private Users currUser;
+
     @FXML
     VBox eventLayout;
     @FXML
@@ -62,10 +64,21 @@ public class UserController implements Initializable  {
     CheckBox foodTag;
     @FXML
     Button loginButton;
+    @FXML
+    ImageView userImage;
 
 
-    public void displayData(ObservableList<Event> event){
+    public void displayData(ObservableList<Event> event, Users loggedUser){
+
+        if (loggedUser != null){
+            currUser = loggedUser;
+            loginButton.setText(currUser.getUserName());
+            userImage.setImage(currUser.getUserImage());
+
+        }
+
         events.addAll(event);
+
         try {
             for (Event value : events) {
                 FXMLLoader fxmLoader = new FXMLLoader();
@@ -212,7 +225,7 @@ public class UserController implements Initializable  {
         root = loader.load();
 
         LoginController loginController = loader.getController();
-        loginController.checker(loginButton.getText());
+        loginController.checker(loginButton.getText(), events);
 
         stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

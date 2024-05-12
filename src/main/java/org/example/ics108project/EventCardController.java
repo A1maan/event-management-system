@@ -29,6 +29,9 @@ import java.util.ResourceBundle;
 
 public class EventCardController implements Initializable {
     private static ObservableList<Event> events = FXCollections.observableArrayList();
+    private ObservableList<Event> users = FXCollections.observableArrayList();
+
+    private Users currUser;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -51,6 +54,7 @@ public class EventCardController implements Initializable {
             events.add(event);
         }
 
+        //currUser = loggedUser;
         eventImage.setImage(event.getImage());
         eventTitle.setText(event.getTitle());
         String formattedDate = event.getDate().format(DateTimeFormatter.ofPattern("MMM-dd-yyyy"));
@@ -66,7 +70,7 @@ public class EventCardController implements Initializable {
         eventDetailsCont.saveData(events);
         for (Event ev: events){
             if (ev.getTitle().equals(eventTitle.getText())){
-                eventDetailsCont.displayData(ev);
+                eventDetailsCont.displayData(ev, currUser);
                 break;
             }
         }

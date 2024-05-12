@@ -30,6 +30,10 @@ public class EventDetailsCont implements Initializable {
 
     ObservableList<Event> events = FXCollections.observableArrayList();
     Event currEvent;
+
+    static ObservableList<Users> users = FXCollections.observableArrayList();
+
+    private Users currUser;
     boolean alrdyConfirmed = true;
 
     private Stage stage;
@@ -78,12 +82,23 @@ public class EventDetailsCont implements Initializable {
     Label l2;
     @FXML
     ImageView eventDetailsImage;
+    @FXML
+    ImageView userImage;
+    @FXML
+    Button loginButton;
 
     public void saveData(ObservableList<Event> passedEvents){
         events.addAll(passedEvents);
     }
 
-    public void displayData(Event event){
+    public void displayData(Event event, Users loggedUser){
+
+        if (loggedUser != null){
+            currUser = loggedUser;
+            loginButton.setText(currUser.getUserName());
+            userImage.setImage(currUser.getUserImage());
+        }
+
         currEvent = event;
         titleText.setText(event.getTitle());
         descriptionText.setText(event.getDescription());
@@ -169,7 +184,9 @@ public class EventDetailsCont implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("User.fxml"));
         root = loader.load();
         UserController userController = loader.getController();
-        userController.displayData(events);
+        userController.displayData(events, currUser);
+
+
         stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
