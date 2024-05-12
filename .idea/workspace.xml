@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="443e0dac-aad7-417f-a7cd-9a816ca4240e" name="Changes" comment="add README.md file">
+    <list default="true" id="443e0dac-aad7-417f-a7cd-9a816ca4240e" name="Changes" comment="6">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/BookingCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/BookingCardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/EventCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/EventCardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/EventDetailsCont.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/EventDetailsCont.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/MyEventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/MyEventsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ics108project/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ics108project/Users.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +122,7 @@
       <workItem from="1715424531094" duration="57000" />
       <workItem from="1715431032775" duration="7433000" />
       <workItem from="1715494275779" duration="2894000" />
-      <workItem from="1715521814300" duration="23595000" />
+      <workItem from="1715521814300" duration="24710000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -325,7 +332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715544738679</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="6">
+      <option name="closed" value="true" />
+      <created>1715545487497</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1715545487497</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,7 +374,8 @@
     <MESSAGE value="improve date input handling in AddEventController and EditEventController" />
     <MESSAGE value="improve Admin.fxml and add Image uploader" />
     <MESSAGE value="add README.md file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add README.md file" />
+    <MESSAGE value="6" />
+    <option name="LAST_COMMIT_MESSAGE" value="6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

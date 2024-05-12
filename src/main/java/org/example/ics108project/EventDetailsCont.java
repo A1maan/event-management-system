@@ -95,7 +95,7 @@ public class EventDetailsCont implements Initializable {
         events.addAll(passedEvents);
     }
 
-    public void displayData(Event event, Users loggedUser){
+    public void displayData(Event event, Users loggedUser){ //this class controls the scene which displays the event details
 
         if (loggedUser != null){
             currUser = loggedUser;
@@ -117,7 +117,7 @@ public class EventDetailsCont implements Initializable {
         eventDetailsImage.setImage(event.getImage());
     }
 
-    // confirm booking and sending ticket
+    // confirm booking
     public void openConfirmation(ActionEvent event){
         System.out.println(currUser);
 
@@ -177,16 +177,13 @@ public class EventDetailsCont implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
-
+    //scenes switching methods
     public void switchToUserScene(ActionEvent event) throws IOException {
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("User.fxml"));
         root = loader.load();
         UserController userController = loader.getController();
         userController.displayData(events, currUser);
-
 
         stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

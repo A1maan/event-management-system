@@ -27,7 +27,7 @@ import java.net.URL;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-public class EventCardController implements Initializable {
+public class EventCardController implements Initializable { // this controller creates a scene for each event and implement them in a vbox in the user page
     private static ObservableList<Event> events = FXCollections.observableArrayList();
     private ObservableList<Event> users = FXCollections.observableArrayList();
 

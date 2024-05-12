@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MyEventsController implements Initializable {
+public class MyEventsController implements Initializable { // this class controlls the users booked events
 
     private ObservableList<Event> bookedEvents = FXCollections.observableArrayList();
     private ObservableList<Event> events = FXCollections.observableArrayList();
@@ -109,7 +109,7 @@ public class MyEventsController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
+    //switching methods
     public void switchToLoginScene(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
         root = loader.load();
@@ -165,6 +165,7 @@ public class MyEventsController implements Initializable {
         stage.show();
     }
 
+    //ticket view and cancel booking methods
     public void ticketView(Event event, Users loggedUser) {
         currUser = loggedUser;
         popup.setVisible(true);

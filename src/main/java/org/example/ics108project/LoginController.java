@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LoginController implements Initializable {
+public class LoginController implements Initializable { //  this class controls the login scene
 
     static ObservableList<Users> users = FXCollections.observableArrayList();
     ObservableList<Event> events = FXCollections.observableArrayList();
@@ -66,7 +66,7 @@ public class LoginController implements Initializable {
     @FXML
     Label eMessageN;
 
-    public void createUser(ActionEvent event){
+    public void createUser(ActionEvent event){ // allowing user to create new account if he is not already looged in
 
         try{
             boolean dataChecker = true;
@@ -120,7 +120,7 @@ public class LoginController implements Initializable {
 
     }
 
-    public void updateUser(ActionEvent event){
+    public void updateUser(ActionEvent event){ // update user's info
         boolean updateCheck = true;
 
         if (userEmail.getText().contains("@gmail.com") || userEmail.getText().contains("@outlook.com")){
@@ -162,7 +162,7 @@ public class LoginController implements Initializable {
 
     }
 
-    public void logout(ActionEvent event){
+    public void logout(ActionEvent event){ //sign out the user
         currUser = null;
         Image im = new Image("file:\\C:\\Users\\Dr.Rehab Gwada\\OneDrive\\Desktop\\java project\\EventManagementSystem\\src\\main\\resources\\org\\example\\ics108project\\project-images\\profilePic.png");
         userImage.setImage(im);
@@ -203,7 +203,7 @@ public class LoginController implements Initializable {
 
     }
 
-    public void checker(String currUserName,ObservableList<Event> currEventsList ){
+    public void checker(String currUserName,ObservableList<Event> currEventsList ){ // checks if the user is logged in
         events.addAll(currEventsList);
         loginButton.setText(currUserName);
         for(Users eachUser: users){
@@ -233,7 +233,7 @@ public class LoginController implements Initializable {
         }
     }
 
-
+    //switching scenes methods
     public void switchToUserScene(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("User.fxml"));
         // the next code block to pass the created event to userController

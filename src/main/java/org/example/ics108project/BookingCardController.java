@@ -60,7 +60,7 @@ public class BookingCardController implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle) {// this controller creates a scene for each event booked by the user and implements it in the MyEvents scene
 
     }
 

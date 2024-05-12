@@ -22,7 +22,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.ResourceBundle;
-
+//userPage primary controller
 public class UserController implements Initializable  {
 
     ObservableList<Event> events = FXCollections.observableArrayList();
@@ -70,7 +70,7 @@ public class UserController implements Initializable  {
 
     public void displayData(ObservableList<Event> event, Users loggedUser){
 
-        if (loggedUser != null){
+        if (loggedUser != null){ // checking if the user is logged in
             currUser = loggedUser;
             loginButton.setText(currUser.getUserName());
             userImage.setImage(currUser.getUserImage());
@@ -94,7 +94,7 @@ public class UserController implements Initializable  {
         }
     }
 
-    public void applyFilter(){
+    public void applyFilter(){// this apply filter the events based on the event objects in filteredEvents list
         while(!eventLayout.getChildren().isEmpty()){
             eventLayout.getChildren().removeFirst();
         }
@@ -178,7 +178,7 @@ public class UserController implements Initializable  {
 
     }
 
-    public void resetFilters(){
+    public void resetFilters(){//resets filters to default
         try {
             while(!eventLayout.getChildren().isEmpty()){
                 eventLayout.getChildren().removeFirst();
@@ -209,6 +209,7 @@ public class UserController implements Initializable  {
         }
     }
 
+    // scenes switching methods
     public void switchToAdminScene(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
         root = loader.load();
@@ -255,7 +256,7 @@ public class UserController implements Initializable  {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         datePicker.setDayCellFactory(param -> new DateCell() {
             @Override
-            public void updateItem(LocalDate date, boolean empty) {
+            public void updateItem(LocalDate date, boolean empty) { // this code snippet disables prev dates in date picker
                 super.updateItem(date, empty);
                 setDisable(empty || date.compareTo(LocalDate.now()) < 0 );
             }
