@@ -30,7 +30,7 @@
             <Insets right="100.0" />
          </GridPane.margin>
       </Button>
-      <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="134.0" style="-fx-background-color: transparent;" text=" Admin Page" GridPane.halignment="CENTER">
+      <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="134.0" style="-fx-background-color: transparent;" text=" Admin" GridPane.halignment="CENTER">
          <font>
             <Font name="Euphemia UCAS Bold" size="16.0" />
          </font>
