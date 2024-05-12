@@ -1,0 +1,56 @@
+Index: src/main/java/org/example/ics108project/Event.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.ics108project;\n\nimport javafx.scene.image.Image;\n\nimport java.time.LocalDate;\nimport java.util.Date;\n\npublic class Event {\n    static Integer id = 0;\n    private Integer eventId;\n    private String title;\n    private String description;\n    private String category;\n    private LocalDate date;\n    private String time;\n    private Integer capacity;\n    private String location;\n    private Image image;\n\n    private String imageNameText;\n\n    public Image getImage() {\n        return image;\n    }\n\n    public void setImage(Image image) {\n        this.image = image;\n    }\n\n    public String getImageNameText() {\n        return imageNameText;\n    }\n\n    public void setImageNameText(String imageNameText) {\n        this.imageNameText = imageNameText;\n    }\n\n    public Event(String title, String category, String description, LocalDate date, String time, Integer capacity, String location, Image image, String imageNameText){\n        id += 1;\n\n        this.title = title;\n        this.category = category;\n        this.description = description;\n        this.date = date;\n        this.time = time;\n        this.capacity = capacity;\n        this.location = location;\n        this.image = image;\n        this.imageNameText = imageNameText;\n        this.eventId = id;\n    }\n\n    public static Integer getcurrId(){\n        return id;\n    }\n\n    public Integer getEventId(){\n        return this.eventId;\n    }\n\n    public void setEventId(Integer eventId) {\n        this.eventId = eventId;\n    }\n\n    public void setTitle(String title) {\n        this.title = title;\n    }\n\n    public void setDescription(String description) {\n        this.description = description;\n    }\n\n    public void setCategory(String category) {\n        this.category = category;\n    }\n\n    public void setDate(LocalDate date) {\n        this.date = date;\n    }\n\n    public void setCapacity(Integer capacity) {\n        this.capacity = capacity;\n    }\n\n    public void setLocation(String location) {\n        this.location = location;\n    }\n\n    public String getTitle() {\n        return title;\n    }\n\n    public String getDescription() {\n        return description;\n    }\n\n    public String getCategory() {\n        return category;\n    }\n\n    public LocalDate getDate() {\n        return date;\n    }\n\n    public Integer getCapacity() {\n        return capacity;\n    }\n\n    public String getLocation() {\n        return location;\n    }\n    public String getTime() {\n        return time;\n    }\n\n    public void setTime(String time) {\n        this.time = time;\n    }\n\n    public Integer getEventID(){\n        return this.eventId;\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/ics108project/Event.java b/src/main/java/org/example/ics108project/Event.java
+--- a/src/main/java/org/example/ics108project/Event.java	
++++ b/src/main/java/org/example/ics108project/Event.java	
+@@ -16,25 +16,8 @@
+     private Integer capacity;
+     private String location;
+     private Image image;
+-
+     private String imageNameText;
+ 
+-    public Image getImage() {
+-        return image;
+-    }
+-
+-    public void setImage(Image image) {
+-        this.image = image;
+-    }
+-
+-    public String getImageNameText() {
+-        return imageNameText;
+-    }
+-
+-    public void setImageNameText(String imageNameText) {
+-        this.imageNameText = imageNameText;
+-    }
+-
+     public Event(String title, String category, String description, LocalDate date, String time, Integer capacity, String location, Image image, String imageNameText){
+         id += 1;
+ 
+@@ -116,6 +99,19 @@
+     public void setTime(String time) {
+         this.time = time;
+     }
++    public Image getImage() {
++        return image;
++    }
++    public void setImage(Image image) {
++        this.image = image;
++    }
++    public String getImageNameText() {
++        return imageNameText;
++    }
++    public void setImageNameText(String imageNameText) {
++        this.imageNameText = imageNameText;
++    }
++
+ 
+     public Integer getEventID(){
+         return this.eventId;
