@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.LoginController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.LoginController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93b079" height="70.0" stroke="TRANSPARENT" strokeType="INSIDE" width="600.0" />
       <Text fontSmoothingType="LCD" layoutX="-10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EventADOR" textAlignment="CENTER" wrappingWidth="165.47003173828125">
@@ -39,17 +39,17 @@
             <Image url="@project-images/icsProjLogo.png" />
          </image>
       </ImageView>
-      <Button fx:id="homePage" layoutX="190.0" layoutY="19.0" mnemonicParsing="false" onAction="#switchToUserScene" style="-fx-background-color: &quot;transparent&quot;;" text="Home" textFill="WHITE">
+      <Button fx:id="homePage" layoutX="190.0" layoutY="5.0" mnemonicParsing="false" onAction="#switchToUserScene" style="-fx-background-color: &quot;transparent&quot;;" text="Home" textFill="WHITE" AnchorPane.bottomAnchor="339.0" AnchorPane.topAnchor="5.0">
          <font>
             <Font name="DecoType Naskh" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="myEvents" layoutX="255.0" layoutY="19.0" mnemonicParsing="false" onAction="#switchToMyEventsScene" style="-fx-background-color: &quot;transparent&quot;;" text="My Events" textFill="WHITE">
+      <Button fx:id="myEvents" layoutX="255.0" layoutY="5.0" mnemonicParsing="false" onAction="#switchToMyEventsScene" style="-fx-background-color: &quot;transparent&quot;;" text="My Events" textFill="WHITE" AnchorPane.bottomAnchor="339.0" AnchorPane.topAnchor="5.0">
          <font>
             <Font name="DecoType Naskh" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="adminPage" layoutX="347.0" layoutY="19.0" mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-color: &quot;transparent&quot;;" text="Admin" textFill="WHITE">
+      <Button fx:id="adminPage" layoutX="347.0" layoutY="5.0" mnemonicParsing="false" onAction="#switchToAdminScene" style="-fx-background-color: &quot;transparent&quot;;" text="Admin" textFill="WHITE" AnchorPane.bottomAnchor="339.0" AnchorPane.topAnchor="5.0">
          <font>
             <Font name="DecoType Naskh" size="16.0" />
          </font>
@@ -82,16 +82,16 @@
             <Font name="Dubai Regular" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="userName" layoutX="252.0" layoutY="103.0" prefHeight="25.0" prefWidth="245.0" promptText="Moaz Ahmed" style="-fx-border-color: #93b079; -fx-background-radius: 25; -fx-border-radius: 25;" />
-      <TextField fx:id="userEmail" layoutX="286.0" layoutY="145.0" prefHeight="25.0" prefWidth="211.0" promptText="mtsat2005@gmail.com" style="-fx-border-color: #93b079; -fx-background-radius: 25; -fx-border-radius: 25;" />
-      <PasswordField fx:id="userPassword" layoutX="252.0" layoutY="188.0" prefHeight="25.0" prefWidth="245.0" promptText="xxxxxxxxx" style="-fx-border-color: #93b079; -fx-border-radius: 25; -fx-background-radius: 25;" />
-      <Button fx:id="saveUser" layoutX="504.0" layoutY="228.0" mnemonicParsing="false" onAction="#createUser" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #618741; -fx-background-radius: 30;" text="Log In" textFill="WHITE" />
+      <TextField fx:id="userName" layoutX="252.0" layoutY="103.0" prefHeight="25.0" prefWidth="245.0" promptText="Moaz Ahmed" style="-fx-border-color: #93b079; -fx-background-radius: 25; -fx-border-radius: 25;" AnchorPane.bottomAnchor="270.0" AnchorPane.leftAnchor="252.0" AnchorPane.rightAnchor="103.0" AnchorPane.topAnchor="103.0" />
+      <TextField fx:id="userEmail" layoutX="286.0" layoutY="145.0" prefHeight="25.0" prefWidth="211.0" promptText="mtsat2005@gmail.com" style="-fx-border-color: #93b079; -fx-background-radius: 25; -fx-border-radius: 25;" AnchorPane.bottomAnchor="230.0" AnchorPane.rightAnchor="103.0" AnchorPane.topAnchor="145.0" />
+      <PasswordField fx:id="userPassword" layoutX="252.0" layoutY="188.0" prefHeight="25.0" prefWidth="245.0" promptText="xxxxxxxxx" style="-fx-border-color: #93b079; -fx-border-radius: 25; -fx-background-radius: 25;" AnchorPane.bottomAnchor="187.0" AnchorPane.leftAnchor="252.0" AnchorPane.rightAnchor="103.0" AnchorPane.topAnchor="188.0" />
+      <Button fx:id="saveUser" layoutX="504.0" layoutY="228.0" mnemonicParsing="false" onAction="#createUser" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #618741; -fx-background-radius: 30;" text="Log In" textFill="WHITE" AnchorPane.bottomAnchor="149.0" AnchorPane.leftAnchor="504.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="228.0" />
       <Label fx:id="sMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="117.0" layoutY="315.0" prefHeight="25.0" prefWidth="384.0" text="success message" textAlignment="CENTER" visible="false">
          <font>
             <Font name="Georgia Pro Semibold" size="21.0" />
          </font>
       </Label>
-      <Button fx:id="updateUser" layoutX="504.0" layoutY="228.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #618741; -fx-background-radius: 30;" text="Save" textFill="WHITE" visible="false" />
+      <Button fx:id="updateUser" layoutX="504.0" layoutY="228.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #618741; -fx-background-radius: 30;" text="Save" textFill="WHITE" visible="false" AnchorPane.bottomAnchor="149.0" AnchorPane.leftAnchor="504.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="228.0" />
       <Button fx:id="logOut" layoutX="416.0" layoutY="228.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #618741; -fx-background-radius: 30;" text="Log Out" textFill="WHITE" visible="false" />
       <Circle fill="#93b07900" layoutX="562.0" layoutY="26.0" radius="24.0" stroke="#93b079" strokeType="INSIDE" strokeWidth="8.0" />
       <CheckBox fx:id="changePass" layoutX="504.0" layoutY="193.0" mnemonicParsing="false" onAction="#changePassword" prefHeight="17.0" prefWidth="84.0" text="Change Password" visible="false">
