@@ -4,7 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.image.Image;
 
-public class Users {
+public class Users {// this class is to create users objects. it contains info about the user + events the user booked
     static String userName;
     static String userEmail;
     static private String userPassword;

@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MyEventsController implements Initializable {
+public class MyEventsController implements Initializable { // this class controlls the users booked events
 
     private ObservableList<Event> bookedEvents = FXCollections.observableArrayList();
     private ObservableList<Event> events = FXCollections.observableArrayList();
@@ -54,10 +54,15 @@ public class MyEventsController implements Initializable {
     Button confirmCancel;
     @FXML
     Label ticketLabel;
+    @FXML
+    ImageView noBookingsImage;
+    @FXML
+    VBox containerBox;
 
 
     public void setData(Users loggedUser, ObservableList<Event> event){
         events.addAll(event);
+        System.out.println(events);
         currUser = loggedUser;
         if (currUser == null){
             eMessage.setVisible(true);
@@ -69,14 +74,20 @@ public class MyEventsController implements Initializable {
                 userImage.setImage(currUser.getUserImage());
                 logginButton.setText(currUser.getUserName());
 
-                for (Event ev : bookedEvents) {
-                    FXMLLoader fxmLoader = new FXMLLoader();
-                    fxmLoader.setLocation(getClass().getResource("BookedEventsCard.fxml"));
-                    VBox eventBox = fxmLoader.load();
-                    BookingCardController bookingCardController = fxmLoader.getController();
-                    bookingCardController.displayEvents(ev);
-                    bookingCardController.setCurrUser(currUser);
-                    eventLayout.getChildren().add(eventBox);
+                if (bookedEvents.isEmpty()){
+                    noBookingsImage.setVisible(true);
+                    containerBox.setVisible(false);
+                } else{
+                    for (Event ev : bookedEvents) {
+                        FXMLLoader fxmLoader = new FXMLLoader();
+                        fxmLoader.setLocation(getClass().getResource("BookedEventsCard.fxml"));
+                        VBox eventBox = fxmLoader.load();
+                        BookingCardController bookingCardController = fxmLoader.getController();
+                        bookingCardController.displayEvents(ev);
+                        bookingCardController.setCurrUser(currUser);
+                        bookingCardController.saveData(events);
+                        eventLayout.getChildren().add(eventBox);
+                    }
                 }
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -98,7 +109,7 @@ public class MyEventsController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
+    //switching methods
     public void switchToLoginScene(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
         root = loader.load();
@@ -141,18 +152,22 @@ public class MyEventsController implements Initializable {
 
         bookedEvents = currUser.getUserEvents();
         System.out.println(bookedEvents);
-        for (Event ev : bookedEvents) {
-            FXMLLoader fxmLoader = new FXMLLoader();
-            fxmLoader.setLocation(getClass().getResource("BookedEventsCard.fxml"));
-            VBox eventBox = fxmLoader.load();
-            BookingCardController bookingCardController = fxmLoader.getController();
-            bookingCardController.displayEvents(ev);
-            bookingCardController.setCurrUser(currUser);
-            eventLayout.getChildren().add(eventBox);
-        }
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MyEvents.fxml"));
+        root = loader.load();
+
+        MyEventsController myEventsController = loader.getController();
+        myEventsController.setData(currUser, events);
+
+        stage = (Stage)((Node) e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
-    public void ticketView(Event event) {
+    //ticket view and cancel booking methods
+    public void ticketView(Event event, Users loggedUser) {
+        currUser = loggedUser;
         popup.setVisible(true);
         ticketEvent.setText(event.getTitle());
         ticketName.setText(currUser.getUserName());
@@ -166,7 +181,8 @@ public class MyEventsController implements Initializable {
         hideBox.setVisible(false);
     }
 
-    public void cancelView(Event event) {
+    public void cancelView(Event event, Users loggedUser) {
+        currUser = loggedUser;
         popup.setVisible(true);
         ticketEvent.setText(event.getTitle());
         ticketName.setText(currUser.getUserName());

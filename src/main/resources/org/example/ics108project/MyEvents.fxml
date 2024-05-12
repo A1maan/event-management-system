@@ -16,7 +16,7 @@
 
 <AnchorPane prefHeight="424.0" prefWidth="594.0" style="-fx-background-color: &quot;white&quot;;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ics108project.MyEventsController">
    <children>
-      <VBox layoutX="53.0" layoutY="99.0" prefHeight="325.0" prefWidth="547.0" style="-fx-background-color: &quot;white&quot;; -fx-border-color: &quot;white&quot;;">
+      <VBox fx:id="containerBox" layoutX="53.0" layoutY="99.0" prefHeight="325.0" prefWidth="547.0" style="-fx-background-color: &quot;white&quot;; -fx-border-color: &quot;white&quot;;">
          <children>
             <ScrollPane prefHeight="354.0" prefWidth="549.0" style="-fx-border-color: &quot;white&quot;;">
                <content>
@@ -112,5 +112,10 @@
             <Button fx:id="confirmCancel" mnemonicParsing="false" onAction="#cancelConfirmation" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: &quot;618741&quot;; -fx-background-radius: 15;" text="Confirm" textFill="WHITE" translateX="112.0" translateY="168.0" visible="false" />
          </children>
       </AnchorPane>
+      <ImageView fx:id="noBookingsImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" scaleX="1.5" scaleY="1.5" translateX="225.0" translateY="180.0" visible="false">
+         <image>
+            <Image url="@project-images/noEventsFound.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
