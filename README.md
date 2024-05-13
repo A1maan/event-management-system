@@ -59,7 +59,7 @@ application:
 
 
 - **UserController**: The controller class for the User scene/page.
-    - **Variables**: 
+    - **Variables**: `ObservableList<Event> events`, `ObservableList<Event> filterEvents`, `static ObservableList<Users> users`, `private Stage stage`, `private Scene scene`, `private Parent root`, `private Users currUser`, `VBox eventLayout`, `TextField searchInput`, `ImageView errorFilter`, `DatePicker datePicker`, `Label dateLabel`, `CheckBox busTag`, `CheckBox eduTag`, `CheckBox entTag`, `CheckBox fashTag`, `CheckBox fesTag`, `CheckBox sprTag`, `CheckBox techTag`, `CheckBox foodTag`, `Button loginButton`, `ImageView userImage`
 
     - **Methods**: `initialize(URL url, ResourceBundle resourceBundle)`, `displayData(ObservableList<Event> event)`, `applyFilter()`, `searchFilter()`, `dateFilter()`, `tagFilter()`, `resetFilters()`, `switchToAdminScene(ActionEvent event)`
 
